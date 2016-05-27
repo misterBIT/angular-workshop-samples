@@ -1,0 +1,73 @@
+<style>
+    .ng-touched {background: blue !important}
+</style>
+
+
+<div class="container well">
+    <div [hidden]="submitted">
+        <h1>Edit Monster</h1>
+        <form (ngSubmit)="onSubmit()" #monsterForm="ngForm">
+
+
+            <div class="form-group">
+                <label>Promo</label>
+                <input type="text" required ngControl="promo" #promo="ngForm" class="form-control" />
+                <div class="text-info">
+                    <div [hidden]="promo.pristine">Promo is dirty</div>
+                    <div [hidden]="promo.untouched">Promo is touched</div>
+                    <div [hidden]="promo.valid || promo.pristine">Promo is required</div>
+                    
+                </div>
+            </div>
+
+            
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" required [(ngModel)]="model.name" ngControl="name" #name="ngForm" #spy>
+                <div [hidden]="name.valid" class="alert alert-danger">
+                    Name is required
+                </div>
+            </div>
+            
+            
+            
+            <div class="form-group">
+                <label for="power">Power</label>
+                <input type="number" class="form-control" [(ngModel)]="model.power" ngControl="power" #power="ngForm">
+            </div>
+            
+            <div class="form-group">
+                <label for="food">Favorite Food</label>
+                <select class="form-control" required [(ngModel)]="model.favFood" ngControl="food" #food="ngForm">
+                    <option *ngFor="#food of foods" [value]="food">{{food}}</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-default" [disabled]="!monsterForm.form.valid">Submit</button>
+        </form>
+        <hr>
+        <div class="well">
+            <p>{{diagnostic }}</p>
+            <p>Spy Classes: {{spy.className}}</p>
+        </div>
+        
+    </div>
+    <div [hidden]="!submitted">
+        <h2>You submitted the following:</h2>
+        <div class="row">
+            <div class="col-xs-3">Name</div>
+            <div class="col-xs-9  pull-left">{{ model.name }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">Power</div>
+            <div class="col-xs-9 pull-left">{{ model.power }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">Food</div>
+            <div class="col-xs-9 pull-left">{{ model.favFood }}</div>
+        </div>
+        <br>
+        <button class="btn btn-default" (click)="submitted=false">Edit</button>
+    </div>
+</div>
