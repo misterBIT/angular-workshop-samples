@@ -14,12 +14,11 @@ import {CONFIG} from './common/app-config';
   template: `
   <h2>Cars</h2>
   <ul>
-    <li *ngFor="#car of cars">{{car.drive()}}</li>
+    <li *ngFor="let car of cars">{{car.drive()}}</li>
   </ul>
   <ul>
-    <car-detail *ngFor="#car of cars" [car]="car" (deleted)="onCarDeleted($event)"></car-detail>
+    <car-detail *ngFor="let car of cars" [car]="car" (deleted)="onCarDeleted($event)"></car-detail>
   </ul>
-
   `,
 })
 export class CarsComponent  {
@@ -34,7 +33,7 @@ export class CarsComponent  {
 }
 
 
-let expected = [{plate: 'A'}, {plate: 'B'}]
-let mockService = <CarService> {query: () => expected }
+let expected = [{plate: 'A'}, {plate: 'B'}];
+let mockService = <CarService> {query: () => expected };
 let comp = new CarsComponent(mockService);
 console.assert(comp.cars.length === expected.length, 'should have cars when CarComponent created');
