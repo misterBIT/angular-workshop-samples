@@ -5,7 +5,7 @@ import {TabComponent} from './tab.component';
     // styles: [`li.active {color:orange}`],
     template: `
     <ul class="nav nav-tabs">
-        <li *ngFor="#tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
+        <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
             <a href="#">{{tab.tabTitle}}</a>
         </li> 
     </ul>

@@ -2,11 +2,7 @@ import {Component} from '@angular/core';
 import {NgStyle} from '@angular/common';
 @Component({
     selector: 'tries',
-    template: `
-        <h2>Tries!</h2>
-        The monster's name is {{monster?.firstName}}
-{{  title | lowercase  | uppercase}}
-    `,
+    template: `<h2>{{title}} World</h2>`,
     
 })
 export class TriesComponent {
