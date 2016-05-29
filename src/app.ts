@@ -1,8 +1,4 @@
 import "./pets-intro/chapters/01/main";
-
-
-
-
 //import "./samples/000-Tries/main";
 //import "./samples/010-counterInputOutput/main";
 //import "./samples/012-DisplayAndEvents/main";

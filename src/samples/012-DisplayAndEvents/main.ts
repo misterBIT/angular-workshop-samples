@@ -23,7 +23,7 @@ import {Component} from '@angular/core'
     <hr>
     <h3>Looping:</h3>
     <ul>
-        <li *ngFor="#nick of monster.nicks">
+        <li *ngFor="let nick of monster.nicks">
             {{ nick }}
         </li>
     </ul>
