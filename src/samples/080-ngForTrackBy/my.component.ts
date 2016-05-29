@@ -41,13 +41,13 @@ class NodeLoggerDirective {
       </p>
       <h3> Friends </h3>
       <ul>
-        <li *ngFor="let friend of friends ; #index = index" nodeLogger="{{ friend.name }} at index {{ index }}.">
+        <li *ngFor="let friend of friends ; let index = index"  nodeLogger="{{ friend.name }} at index {{ index }}.">
           {{ friend.name }}
         </li>
       </ul>
       <h3> Enemies </h3>
       <ul>
-        <li *ngFor="let enemy of enemies ; #index = index ; trackBy:personIdentity" nodeLogger="{{ enemy.name }} at index {{ index }}.">
+        <li *ngFor="let enemy of enemies ; let index = index ; trackBy:personIdentity" nodeLogger="{{ enemy.name }} at index {{ index }}.">
           {{ enemy.name }}
         </li>
       </ul>`

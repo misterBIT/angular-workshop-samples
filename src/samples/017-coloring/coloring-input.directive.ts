@@ -5,9 +5,9 @@ import {Directive, ElementRef, Input} from '@angular/core';
 export class ColoringInputDirective {
     constructor(el: ElementRef) {
         el.nativeElement.addEventListener('keyup', ()=> {
-            el.nativeElement.style.backgroundColor = this.getRandomColor();    
+            el.nativeElement.style.backgroundColor = this.getRandomColor();
         });
-        
+
     }
     private getRandomColor() {
         var letters = '0123456789ABCDEF'.split('');

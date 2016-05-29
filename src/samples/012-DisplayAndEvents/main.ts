@@ -2,10 +2,10 @@ import {bootstrap} from '@angular/platform-browser-dynamic'
 import {Component} from '@angular/core'
 
 @Component({
-    selector: 'app',
-    template: `
+	selector: 'app',
+	template: `
 
-    Echo That: <input #txto (keyup)="0" />  {{txto.value}}
+    Echo That: <input #txto (keyup)="0" />  {{txto.value}}
     <hr>
 
     <h3>
@@ -28,6 +28,9 @@ import {Component} from '@angular/core'
         </li>
     </ul>
     <p>
+    	<input #newnick type="text"/>
+        <button (click)="monster.nicks.push(newnick.value)">Add  Nick Name</button>
+        <br/>
         Nick Names:
         <span *ngIf="monster.nicks.length > 3">Many Names!</span>
     </p>    
@@ -38,15 +41,19 @@ import {Component} from '@angular/core'
     `,
 })
 class App {
-    private monster = {name: 'Ugi', nicks: ['Ogush', 'Ugion', 'Cookie Monster']};
-    private values = '';
-    
-    constructor(){}
-    
-    sayHello(monster) {alert('Hello ' + monster.name);}
-        onKey(event:any) {
-        this.values += event.target.value + ' | ';
-    }
+	private monster = {name: 'Ugi', nicks: ['Ogush', 'Ugion', 'Cookie Monster']};
+	private values = '';
+
+	constructor() {
+	}
+
+	sayHello(monster) {
+		alert('Hello ' + monster.name);
+	}
+
+	onKey(event:any) {
+		this.values += event.target.value + ' | ';
+	}
 }
 
 bootstrap(App);
