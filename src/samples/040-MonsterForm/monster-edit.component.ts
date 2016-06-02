@@ -9,8 +9,9 @@ import { Monster }    from './monster';
     templateUrl: 'samples/040-MonsterForm/monster-edit.component.html'
 })
 export class MonsterEditComponent {
-    foods = ['Sugar', 'Cookies',
-        'Soup', 'Omlet'];
+    //demo that angular allows selecting an object as value for select input as in ng1.x
+    foods = [{name:'Sugar'}, {name:'Cookies'},
+        {name:'Soup'}];
 
     model = new Monster(102, 'Shraga', 3, this.foods[1]);
 

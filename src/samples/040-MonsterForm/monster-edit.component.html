@@ -40,7 +40,7 @@
             <div class="form-group">
                 <label for="food">Favorite Food</label>
                 <select class="form-control" required [(ngModel)]="model.favFood" ngControl="food" #food="ngForm">
-                    <option *ngFor="let food of foods" [value]="food">{{food}}</option>
+                    <option *ngFor="let food of foods" [value]="food">{{food.name}}</option>
                 </select>
             </div>
 

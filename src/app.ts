@@ -1,4 +1,4 @@
-import "./pets-intro/chapters/01/main";
+//import "./pets-intro/chapters/01/main";
 //import "./samples/000-Tries/main";
 //import "./samples/010-counterInputOutput/main";
 //import "./samples/012-DisplayAndEvents/main";
@@ -12,6 +12,7 @@ import "./pets-intro/chapters/01/main";
 //import "./samples/050-Collapse-ContentProjection/main";
 //import "./samples/055-Tabs-ContentProjection/main";
 //import "./samples/056-Tabs-ContentProjection2/main";
+import "./samples/056-Tabs-ContentProjection3-addTab/main";
 //import "./samples/070-Cars/main";
 //import "./samples/080-ngForTrackBy/main";
 //import "./samples/090-SimpleCustomDirective/main";

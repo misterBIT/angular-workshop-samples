@@ -4,12 +4,16 @@ import {Component} from '@angular/core'
 import {ColoringInputDirective} from './coloring-input.directive';
 
 @Component({
-    selector: 'app',
-    template: `
-       <input coloring-input /> 
+	selector  : 'app',
+	template  : `
+       <input [coloring-input]="data" /> 
+       <input coloring-input="ddd" /> 
     `,
-    directives: [ColoringInputDirective]
+	directives: [ColoringInputDirective]
 })
-class App {}
+class App {
+	data = 'ttt';
+
+}
 
 bootstrap(App);

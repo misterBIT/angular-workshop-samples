@@ -12,17 +12,17 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
     `
 })
 export class LetterSelector  implements OnInit{
-    @Output() select = new EventEmitter();
+    @Output('select') selectEmitter = new EventEmitter(); // inputs/outputs can be renamed
     letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     letterSelected = this.letters[2]; 
 
     constructor() { }
     selectLetter(letter) {
         this.letterSelected = letter;
-        this.select.emit(letter) 
+        this.selectEmitter.emit(letter) 
     }
     ngOnInit(){
-        this.select.emit(this.letterSelected);
+        this.selectEmitter.emit(this.letterSelected);
     }
 
 }

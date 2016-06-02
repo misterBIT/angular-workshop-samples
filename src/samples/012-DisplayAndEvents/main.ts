@@ -10,21 +10,24 @@ import {Component} from '@angular/core'
 
     <h3>
         Monster of the Month: {{monster.name}}
-        <button (click)="sayHello(monster)">Say Hello</button>
+        <!--alternate syntax for event binding-->
+        <button on-click="sayHello(monster)">Say Hello</button>
     </h3>
     
 
     <hr>
     <h3>Event Filtering:</h3>
-    <input (keyup)="onKey($event)" placeholder="On Key up">
-    <input #txt (keyup.enter)="values = values + txt.value + '|'" placeholder="Only on Enter">
+    <button (click)="toggelVisibleFlag()">Toggle</button>
+    <input [style.hidden]='visibleFlag' (keyup)="onKey($event)" value="On Key up">
+    <!--difference between value attr and value prop-->
+    <input #txt (keyup.enter)="values = values + txt.value + '|';sayHello('dd')" placeholder="Only on Enter">
     {{values}}
 
     <hr>
     <h3>Looping:</h3>
     <ul>
-        <li *ngFor="let nick of monster.nicks">
-            {{ nick }}
+        <li *ngFor="let nick of monster.nicks; let i = index; let last = last">
+           <span *ngIf="last">And </span><span{{i+1}} - {{ nick }}</span>
         </li>
     </ul>
     <p>
@@ -43,12 +46,17 @@ import {Component} from '@angular/core'
 class App {
 	private monster = {name: 'Ugi', nicks: ['Ogush', 'Ugion', 'Cookie Monster']};
 	private values = '';
+	visibleFlag = true;
 
 	constructor() {
 	}
 
 	sayHello(monster) {
 		alert('Hello ' + monster.name);
+	}
+
+	toggelVisibleFlag() {
+		this.visibleFlag = !this.visibleFlag;
 	}
 
 	onKey(event:any) {
