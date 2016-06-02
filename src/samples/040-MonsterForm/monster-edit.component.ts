@@ -13,7 +13,7 @@ export class MonsterEditComponent {
     foods = [{name:'Sugar'}, {name:'Cookies'},
         {name:'Soup'}];
 
-    model = new Monster(102, 'Shraga', 3, this.foods[1]);
+    model = new Monster(102, 'Shraga', 3, this.foods[1].name);
 
     submitted = false;
 

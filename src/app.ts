@@ -9,10 +9,11 @@
 // import "./samples/042-FormsCustomValidations/main";
 // import "./samples/043-FormsAsynchValidator/main";
 //import "./samples/046-ProductForms/main";
+import "./samples/dynamicForms/main.ts";
 //import "./samples/050-Collapse-ContentProjection/main";
 //import "./samples/055-Tabs-ContentProjection/main";
 //import "./samples/056-Tabs-ContentProjection2/main";
-import "./samples/056-Tabs-ContentProjection3-addTab/main";
+//import "./samples/056-Tabs-ContentProjection3-addTab/main";
 //import "./samples/070-Cars/main";
 //import "./samples/080-ngForTrackBy/main";
 //import "./samples/090-SimpleCustomDirective/main";
