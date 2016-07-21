@@ -5,15 +5,15 @@ import {Directive, ElementRef, Input,PLATFORM_DIRECTIVES} from '@angular/core';
 export class ColoringInputDirective {
 	@Input("coloring-input") letters;
 
-	constructor(el:ElementRef) {
-		el.nativeElement.addEventListener('keyup', ()=> {
-			el.nativeElement.style.backgroundColor = this.getRandomColor();
+	constructor(private $elementRef:ElementRef) {
+		$elementRef.nativeElement.addEventListener('keyup', ()=> {
+			$elementRef.nativeElement.style.backgroundColor = this.getRandomColor();
 		});
 
 	}
 	
 	ngOnInit(){
-		console.log(this.letters); // just to demo we can get input of a string withouut binding and that the [] does not alter the selector matching
+			this.$elementRef.nativeElement.value = this.letters;
 	}
 
 	private getRandomColor() {

@@ -19,10 +19,10 @@ import {NgStyle} from '@angular/common';
      <hr>
      <h1 [ngSwitch]="toeChoice">
      
-        <template [ngSwitchWhen]="'Eenie'">Eenie</template>
-        <template [ngSwitchWhen]="'Meanie'">Meanie</template>
-        <template [ngSwitchWhen]="'Miney'">Miney</template>
-        <template [ngSwitchWhen]="'Moe'">Moe</template>
+        <template [ngSwitchCase]="'Eenie'">Eenie</template>
+        <template [ngSwitchCase]="'Meanie'">Meanie</template>
+        <template [ngSwitchCase]="'Miney'">Miney</template>
+        <template [ngSwitchCase]="'Moe'">Moe</template>
         <template ngSwitchDefault>Other</template>
     </h1>
      

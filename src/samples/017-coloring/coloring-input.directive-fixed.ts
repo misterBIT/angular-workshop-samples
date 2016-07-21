@@ -1,8 +1,17 @@
-import {Directive, ElementRef, Input, HostBinding, HostListener} from '@angular/core';
+import {Directive, ElementRef, Renderer,OnInit,Input, HostBinding, HostListener} from '@angular/core';
 @Directive({
 	selector: '[coloring-input]',
 })
-export class ColoringInputDirective {
+export class ColoringInputDirective implements OnInit{
+	@Input("coloring-input") letters;
+
+	constructor(private $elementRef:ElementRef,private renderer:Renderer) {
+	}
+
+	ngOnInit() {
+		this.renderer.setElementProperty(this.$elementRef.nativeElement,'value',this.letters);
+	}
+
 	@HostBinding('style.backgroundColor')
 	color:string;
 

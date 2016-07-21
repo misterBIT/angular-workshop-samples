@@ -1,7 +1,7 @@
 import {bootstrap} from '@angular/platform-browser-dynamic'
 import {Component} from '@angular/core'
 
-import {ColoringInputDirective} from './coloring-input.directive';
+import {ColoringInputDirective} from './coloring-input.directive-fixed';
 
 @Component({
 	selector  : 'app',
