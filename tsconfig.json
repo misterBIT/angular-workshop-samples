@@ -2,7 +2,6 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es5",
-        "noImplicitAny": false,
         "outDir": "dist",
         "rootDir": ".",
         "sourceMap": true,
@@ -11,8 +10,11 @@
         "moduleResolution": "node"
     },
     "exclude": [
-        "node_modules",
-        "typings/main.d.ts",
-        "typings/main"
-    ]
+        "node_modules"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+        "useWebpackText": true
+    },
+    "compileOnSave": false,
+    "buildOnSave": false
 }
