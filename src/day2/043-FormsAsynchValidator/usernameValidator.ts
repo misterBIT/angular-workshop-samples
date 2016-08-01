@@ -1,4 +1,4 @@
-import { Control } from "@angular/common";
+import { AbstractControl } from "@angular/forms";
 
 interface ValidationResult{
    [key:string]:boolean;
@@ -7,7 +7,7 @@ interface ValidationResult{
 
 export class UsernameValidator {
 
-    static startsWithNumber(control: Control): ValidationResult { 
+    static startsWithNumber(control: AbstractControl): ValidationResult {
     
       if ( control.value !="" && !isNaN(control.value.charAt(0)) ){
         return {"startsWithNumber": true};
@@ -16,7 +16,7 @@ export class UsernameValidator {
       return null;
     }
    
-    static usernameTaken(control: Control): Promise<ValidationResult> {
+    static usernameTaken(control: AbstractControl): Promise<ValidationResult> {
 
         return new Promise((resolve, reject) => {
             setTimeout(() => {

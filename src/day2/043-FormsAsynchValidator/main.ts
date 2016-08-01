@@ -1,21 +1,22 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {bootstrap} from '@angular/platform-browser-dynamic'
+import {provideForms, disableDeprecatedForms, REACTIVE_FORM_DIRECTIVES} from '@angular/forms'
 import {
 	FormBuilder,
 	Validators,
-	Control,
-	ControlGroup,
+	FormControl,
+	FormGroup,
 	FORM_DIRECTIVES
-} from '@angular/common';
+} from '@angular/forms';
 
 
-import { UsernameValidator } from './usernameValidator.ts'
+import {UsernameValidator} from './usernameValidator.ts'
 
 @Component({
-	selector: 'app',
-	template: `
-		<form [ngFormModel]="form">
-			<input type="text" ngControl="username" />
+	selector  : 'app',
+	template  : `
+		<form [formGroup]="form">
+			<input type="text" formControlName="username" />
 			<button (click)="submitData()" 
 				[disabled]="!form.valid" 
 				class="btn btn-primary">
@@ -32,35 +33,36 @@ import { UsernameValidator } from './usernameValidator.ts'
 			
 		</form>
 	`,
-	directives: [FORM_DIRECTIVES]
+	directives: [REACTIVE_FORM_DIRECTIVES]
 })
 
 class App {
-	
-	form: ControlGroup;
-	
-	username: Control;
-	email: Control;
-	asyncEmail: Control;
-	
-	constructor(private builder: FormBuilder) {
+
+	form:FormGroup;
+
+	username:FormControl;
+	email:FormControl;
+	asyncEmail:FormControl;
+
+	constructor(private builder:FormBuilder) {
 		console.log('Why like this');
-		
-		this.username = new Control(
-			"", 
-			Validators.compose([Validators.required, UsernameValidator.startsWithNumber]),
+
+		this.username = new FormControl(
+			"",
+			[Validators.required, UsernameValidator.startsWithNumber],
 			UsernameValidator.usernameTaken
 		);
-		
+
 		this.form = builder.group({
-			username:  this.username
+			username: this.username
 		});
-	}	
-	
-	submitData(){
-     	console.log(JSON.stringify(this.form.value))
-    }
-};
+	}
+
+	submitData() {
+		console.log(JSON.stringify(this.form.value))
+	}
+}
+;
 
 
-bootstrap(App);
+bootstrap(App, [disableDeprecatedForms(), provideForms()]);

@@ -1,21 +1,32 @@
-//import "./pets-intro/chapters/01/main";
-//import "./samples/000-Tries/main";
-//import "./samples/010-counterInputOutput/main";
-//import "./samples/012-DisplayAndEvents/main";
-//import "./samples/017-coloring/main";
- import "./samples/020-BuiltinDirectives/main";
-//import "./samples/025-Pipes/main";
-//import "./samples/040-MonsterForm/main";
-// import "./samples/042-FormsCustomValidations/main";
-// import "./samples/043-FormsAsynchValidator/main";
-//import "./samples/046-ProductForms/main";
-//import "./samples/dynamicForms/main.ts";
-//import "./samples/050-Collapse-ContentProjection/main";
-//import "./samples/055-Tabs-ContentProjection/main";
-//import "./samples/056-Tabs-ContentProjection2/main";
-//import "./samples/056-Tabs-ContentProjection3-addTab/main";
-//import "./samples/070-Cars/main";
-//import "./samples/080-ngForTrackBy/main";
-//import "./samples/090-SimpleCustomDirective/main";
-// import "./samples/110-refToChildElement/main";
-//import "./samples/111-refToContentChildren/main";
+/**********
+ Day1
+ *********/
+
+//import "./day1/000-Tries/main";
+//import "./day1/010-counterInputOutput/main";
+//import "./day1/012-DisplayAndEvents/main";
+//import "./day1/020-BuiltinDirectives/main";
+//import "./day1/025-Pipes/main";
+/**********
+ Day2
+ *********/
+
+//import "./day2/040-MonsterForm/main";
+// import "./day2/041-ProductForms/main";
+//import "./day2/042-FormsCustomValidations/main";
+import "./day2/043-FormsAsynchValidator/main";
+//import "./day2/dynamicForms/main.ts";
+
+/**********
+ Day3
+ *********/
+//import "./day3/017-coloring/main";
+//import "./day3/050-Collapse-ContentProjection/main";
+//import "./day3/055-Tabs-ContentProjection/main";
+//import "./day3/056-Tabs-ContentProjection2/main";
+//import "./day3/056-Tabs-ContentProjection3-addTab/main";
+//import "./day3/070-Cars/main";
+//import "./day3/080-ngForTrackBy/main";
+//import "./day3/090-SimpleCustomDirective/main";
+//import "./day3/110-refToChildElement/main";
+//import "./day3/111-refToContentChildren/main";
