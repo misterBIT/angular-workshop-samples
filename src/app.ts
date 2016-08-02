@@ -14,8 +14,8 @@
 //import "./day2/040-MonsterForm/main";
 // import "./day2/041-ProductForms/main";
 //import "./day2/042-FormsCustomValidations/main";
-import "./day2/043-FormsAsynchValidator/main";
-//import "./day2/dynamicForms/main.ts";
+//import "./day2/043-FormsAsynchValidator/main";
+import "./day2/dynamicForms/main.ts";
 
 /**********
  Day3

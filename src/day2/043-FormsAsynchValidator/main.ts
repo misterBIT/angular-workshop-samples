@@ -1,16 +1,15 @@
-import {Component} from '@angular/core';
-import {bootstrap} from '@angular/platform-browser-dynamic'
-import {provideForms, disableDeprecatedForms, REACTIVE_FORM_DIRECTIVES} from '@angular/forms'
+import {Component} from "@angular/core";
+import {bootstrap} from "@angular/platform-browser-dynamic";
 import {
+	provideForms,
+	disableDeprecatedForms,
+	REACTIVE_FORM_DIRECTIVES,
 	FormBuilder,
 	Validators,
 	FormControl,
-	FormGroup,
-	FORM_DIRECTIVES
-} from '@angular/forms';
-
-
-import {UsernameValidator} from './usernameValidator.ts'
+	FormGroup
+} from "@angular/forms";
+import {UsernameValidator} from "./usernameValidator.ts";
 
 @Component({
 	selector  : 'app',
@@ -62,7 +61,6 @@ class App {
 		console.log(JSON.stringify(this.form.value))
 	}
 }
-;
 
 
 bootstrap(App, [disableDeprecatedForms(), provideForms()]);

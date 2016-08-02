@@ -1,5 +1,5 @@
 import {Component, Injectable, Input, Output, EventEmitter} from '@angular/core';
-import {ControlGroup, FormBuilder, Validators} from '@angular/common';
+import {FormGroup, FormBuilder, Validators, REACTIVE_FORM_DIRECTIVES} from '@angular/forms';
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -86,12 +86,13 @@ export class FormControlService {
 
 @Component({
 	selector: 'df-field',
+	directives:[REACTIVE_FORM_DIRECTIVES],
 	template: `
-<div [ngFormModel]="form" class="form-group">
+<div [formGroup]="form" class="form-group">
   <label [attr.for]="field.key" class="control-label">{{field.label}}</label>
   <div [ngSwitch]="field.controlType">
-    <input *ngSwitchWhen="'textbox'" [ngControl]="field.key" [id]="field.key" [type]="field.type" class="form-control" [placeholder]="field.placeholder" [disabled]="field.disabled" [readonly]="field.readonly">
-    <select [id]="field.key" *ngSwitchWhen="'dropdown'" [ngControl]="field.key" class="form-control">
+    <input *ngSwitchCase="'textbox'" [formControlName]="field.key" [id]="field.key" [type]="field.type" class="form-control" [placeholder]="field.placeholder" [disabled]="field.disabled" [readonly]="field.readonly">
+    <select [id]="field.key" *ngSwitchCase="'dropdown'" [formControlName]="field.key" class="form-control">
       <option style="display:none" value="">Choose an option</option>
       <option *ngFor="let opt of field.options" [value]="opt.key">{{opt.value}}</option>
     </select>
@@ -101,7 +102,7 @@ export class FormControlService {
 })
 export class DynamicFormFieldComponent {
 	@Input() field:FormBase<any>;
-	@Input() form:ControlGroup;
+	@Input() form:FormGroup;
 
 	get isValid() {
 		return this.form.controls[this.field.key].valid;
@@ -114,7 +115,7 @@ export class DynamicFormFieldComponent {
 	selector  : 'dynamic-form',
 	template  : `
 <div>
-  <form (ngSubmit)="onSubmit()" [ngFormModel]="form">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
     <div *ngFor="let field of fields" class="form-row">
       <df-field [field]="field" [form]="form"></df-field>
     </div>
@@ -127,13 +128,13 @@ export class DynamicFormFieldComponent {
     <br><strong>Saved the following values</strong><br>{{payLoad}}
   </div>
 </div>`,
-	directives: [DynamicFormFieldComponent],
+	directives: [DynamicFormFieldComponent, REACTIVE_FORM_DIRECTIVES],
 	providers : [FormControlService]
 })
 export class DynamicFormComponent {
 	@Input() fields:FormBase<any>[] = [];
 	@Output('send') submitted:EventEmitter<any> = new EventEmitter();
-	form:ControlGroup;
+	form:FormGroup;
 	payLoad = '';
 
 	constructor(private qcs:FormControlService) {
