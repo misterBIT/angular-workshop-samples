@@ -40,6 +40,7 @@ export class MyComp1 implements AfterContentInit {
   @ContentChildren(ListItem) items: QueryList<ListItem>;
 
   ngAfterContentInit() {
+    this.items.notifyOnChanges()
      console.log('Items (using a directive): ', this.items.toArray());
   }
 }

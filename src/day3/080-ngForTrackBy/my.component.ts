@@ -41,7 +41,7 @@ class NodeLoggerDirective {
       </p>
       <h3> Friends </h3>
       <ul>
-        <li *ngFor="let friend of friends ; let index = index"  nodeLogger="{{ friend.name }} at index {{ index }}.">
+        <li *ngFor="let friend of friends ; let index = index;  trackBy:$id" nodeLogger="{{ friend.name }} at index {{ index }}.">
           {{ friend.name }}
         </li>
       </ul>
@@ -78,7 +78,6 @@ export class MyComp {
         // array are the same OBJECT REFERENCES that they were in the
         // previous array - we are only affecting the collection.
         this.friends = this.friends.slice().reverse();
-        
         // When we reverse the enemies collection, on the other hand, we
         // are creating both a NEW ARRAY and creating NEW ITEM references
         // within that array.

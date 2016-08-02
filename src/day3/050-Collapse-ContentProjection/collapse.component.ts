@@ -5,8 +5,6 @@ import {
 
 @Component({
   selector: 'collapse',
-  // events: ['open', 'close'],
-  
   properties: ['title'],
   template: `
   <div>

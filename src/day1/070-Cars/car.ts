@@ -1,3 +1,5 @@
+import {OpaqueToken} from "@angular/core";
+export const CarsCollection = new OpaqueToken('CARS');
 export class Car {
     static nextId = 1;
     public id;

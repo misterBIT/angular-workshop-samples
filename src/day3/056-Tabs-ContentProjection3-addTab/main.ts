@@ -3,12 +3,14 @@ import {Component} from '@angular/core'
 
 import {TabsComponent} from './tabs.component';
 import {TabComponent} from './tab.component';
+import {SafePipe} from "./safe.pipe";
 interface TabDesc {
 	title:string;
 	content:string
 }
 @Component({
 	selector  : 'app',
+	//pipes     : [SafePipe],
 	template  : `
         <h1>Tabs</h1>
         <button (click)="addTab()">Add tab</button>
@@ -37,6 +39,7 @@ class App {
 	addTab() {
 		this.tabs.push({title: 'tabs3', content: `<p>tab3 content-</p>`});
 	}
+
 }
 
 bootstrap(App);
