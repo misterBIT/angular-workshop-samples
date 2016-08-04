@@ -23,9 +23,11 @@ import "./day1/000-Tries/main";
 //import  "./day2/NestedModelDrivenForms/main"
 //import  "./day2/VariousFormControls/main"
 //import  "./day2/lifecycle/main"
+
 /**********
  Day3
  *********/
+//import  "./day3/rxjs/wikipediaSearch/main"
 //import "./day3/010-SimpleCustomDirective/main";
 //import "./day3/015-refToChildElement/main";
 //import "./day3/016-refToContentChildren/main";
