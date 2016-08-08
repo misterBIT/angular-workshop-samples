@@ -7,16 +7,17 @@
 //import "./day1/012-DisplayAndEvents/main";
 //import "./day1/020-BuiltinDirectives/main";
 //import "./day1/025-Pipes/main";
-//import "./day1/070-Cars/main";
+// import "./day1/070-Cars/main";
 /**********
  Day2
  *********/
 
 //import "./day2/040-MonsterForm/main";
- import "./day2/041-ProductForms/main";
+//  import "./day2/041-ProductForms/main";
 //import "./day2/042-FormsCustomValidations/main";
 //import "./day2/043-FormsAsynchValidator/main";
 //import "./day2/dynamicForms/main.ts";
+import "./day2/routing-monsters/main.ts";
 
 /**********
  Day3
