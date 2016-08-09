@@ -29,6 +29,9 @@ export class CarListComponent implements OnInit {
     private _route: ActivatedRoute) {
       this._selectedId = +this._route.snapshot.params['id'];
   }
+  ngOnInit() {
+    this._service.getCars().then(cars => this.cars = cars)
+  }  
 
   isSelected(car: Car) { return car.id === this._selectedId; }
 
@@ -36,7 +39,5 @@ export class CarListComponent implements OnInit {
     this._router.navigate( ['/car', car.id] );
   }
 
-  ngOnInit() {
-    this._service.getCars().then(cars => this.cars = cars)
-  }
+
 }

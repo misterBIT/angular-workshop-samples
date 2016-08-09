@@ -32,7 +32,7 @@ export class CarDetailComponent implements OnInit  {
   gotoCars() {
     let carId = this.car ? this.car.id : null;
     // TODO: Pass along the car id if available so that the CarList component can select that car.
-    this._router.navigate(['/car']);
+    this._router.navigate(['/car', {id:carId, test: 'something'}]);
   }
 }
 

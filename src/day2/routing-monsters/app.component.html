@@ -1,8 +1,14 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
-    <span class="navbar-brand">App | </span>
+    <span class="navbar-brand">Cars & Monsters | </span>
     <ul class="nav navbar-nav">
-      <li><a routerLink="/car">Cars</a></li>
+      <li><a routerLink="/" routerLinkActive="active" >Home</a></li>
+      <li><a routerLink="/car" routerLinkActive="active">Cars</a></li>
+       <li><a routerLink="/monster" routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">Monsters</a></li>
+      <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+      <li><a routerLink="/monster/admin" routerLinkActive="active">Monsters Admin</a></li>
+      
     </ul>
   </div>
 </nav>
