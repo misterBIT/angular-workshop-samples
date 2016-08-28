@@ -1,11 +1,8 @@
 import {Component} from '@angular/core';
 import {Monster}    from './monster';
-import {FORM_DIRECTIVES, FORM_PROVIDERS} from "@angular/forms";
 
 @Component({
 	selector   : 'monster-edit',
-	directives : [FORM_DIRECTIVES],
-	providers  : [FORM_PROVIDERS],
 	templateUrl: './monster-edit.component.html'
 })
 export class MonsterEditComponent {

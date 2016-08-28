@@ -1,4 +1,3 @@
-import {bootstrap} from '@angular/platform-browser-dynamic'
 import {Component} from '@angular/core'
 
 import {ColoringInputDirective} from './coloring-input.directive-fixed';
@@ -9,11 +8,25 @@ import {ColoringInputDirective} from './coloring-input.directive-fixed';
        <input [coloring-input]="data" /> 
        <input coloring-input="ddd" /> 
     `,
-	directives: [ColoringInputDirective]
 })
-class App {
+class AppComponent {
 	data = 'ttt';
 
 }
 
-bootstrap(App);
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+
+
+@NgModule({
+  imports: [ BrowserModule ],      
+  declarations: [ AppComponent, ColoringInputDirective],   
+  bootstrap: [ AppComponent ],     
+  providers: [ ]                   
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+

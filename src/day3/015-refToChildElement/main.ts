@@ -9,11 +9,25 @@ import {MyComp, MyComp1} from './my.component';
         <h1>Ref to Child Element</h1>
         <my-comp></my-comp>
         <my-comp1></my-comp1>
-    `,
-    directives: [MyComp,MyComp1]
+    `
 })
-class App {
+class AppComponent {
     
 }
 
-bootstrap(App);
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+
+
+@NgModule({
+  imports: [ BrowserModule ],      
+  declarations: [ AppComponent, MyComp, MyComp1],   
+  bootstrap: [ AppComponent ],     
+  providers: [ ]                   
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+

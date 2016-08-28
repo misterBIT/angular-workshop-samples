@@ -8,9 +8,22 @@ import {TriesComponent} from './tries.component';
     template: `
         <h1>Playground</h1>
         <tries></tries>
-    `,
-    directives: [TriesComponent]
+    `
 })
-class App {}
+class AppComponent {}
 
-bootstrap(App);
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+
+@NgModule({
+  imports: [ BrowserModule ],      
+  declarations: [ AppComponent, TriesComponent],   
+  bootstrap: [ AppComponent ],     
+  providers: [ ]                   
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+

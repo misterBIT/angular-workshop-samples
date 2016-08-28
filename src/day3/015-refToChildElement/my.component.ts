@@ -14,7 +14,7 @@ import {Component, Input, ElementRef, AfterViewInit, Renderer, ViewChild} from '
 export class MyComp {
   constructor(private el: ElementRef) {
     // not ready yet, will not work!
-    //el.nativeElement.querySelector('input').focus();
+    // el.nativeElement.querySelector('input').focus();
   }
   ngAfterViewInit(){
     this.el.nativeElement.querySelector('input').focus();

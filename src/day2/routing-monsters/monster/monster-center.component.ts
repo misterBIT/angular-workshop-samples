@@ -9,10 +9,7 @@ import {MonsterService}         from './monster.service';
   template:  `
     <h2>Monsters Center</h2>
     <router-outlet></router-outlet>
-  `,
-  directives: [ROUTER_DIRECTIVES],
-  // Providing at this level, creates a singleton for it's child routes
-  providers:  [MonsterService],
+  `
   
 })
 export class MonsterCenterComponent { }

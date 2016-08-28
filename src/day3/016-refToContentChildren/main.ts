@@ -1,4 +1,3 @@
-import {bootstrap} from '@angular/platform-browser-dynamic'
 import {Component} from '@angular/core'
 
 import {MyComp, MyComp1, ListItem} from './my.component';
@@ -13,11 +12,25 @@ import {MyComp, MyComp1, ListItem} from './my.component';
         <my-comp1>
             <li *ngFor="let item of items" > {{item}} </li>
         </my-comp1>
-    `,
-    directives: [MyComp,MyComp1, ListItem]
+    `
 })
-class App {
+class AppComponent {
     items = ['sugar', 'salt', 'honey']
 }
 
-bootstrap(App);
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+
+@NgModule({
+  imports: [ BrowserModule, ReactiveFormsModule, HttpModule],      
+  declarations: [ AppComponent, MyComp, MyComp1, ListItem],   
+  bootstrap: [ AppComponent ],     
+  providers: [ ]                   
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

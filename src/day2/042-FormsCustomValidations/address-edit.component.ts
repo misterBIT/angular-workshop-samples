@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {FormGroup, FormControl, Validators, REACTIVE_FORM_DIRECTIVES} from '@angular/forms';
 
-import {validateEmail, EmailValidator} from './email-validator';
+import {validateEmail} from './email-validator';
 import {EmailBlacklistService} from "./email-blacklist.service";
 
 @Component({
@@ -21,8 +21,6 @@ import {EmailBlacklistService} from "./email-blacklist.service";
         <hr />
         <p>Form Valid: {{addressForm.form.valid}}</p>
     `,
-	directives: [EmailValidator, REACTIVE_FORM_DIRECTIVES],
-	providers : [EmailBlacklistService]
 
 })
 export class AddressEditCmp {

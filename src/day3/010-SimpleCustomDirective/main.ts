@@ -1,4 +1,3 @@
-import {bootstrap} from '@angular/platform-browser-dynamic'
 import {Component} from '@angular/core'
 
 import {HighlightDirective} from './highlight.directive';
@@ -7,9 +6,21 @@ import {HighlightDirective} from './highlight.directive';
     selector: 'app',
     template: `
         <p myHighlight>Me? Just a silly Custom Directive</p>
-    `,
-    directives: [HighlightDirective],
+    `
 })
-class App {}
+class AppComponent {}
 
-bootstrap(App);
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+
+@NgModule({
+  imports: [ BrowserModule ],      
+  declarations: [ AppComponent, HighlightDirective],   
+  bootstrap: [ AppComponent ],     
+  providers: [ ]                   
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

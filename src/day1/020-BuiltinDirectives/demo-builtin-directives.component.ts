@@ -26,8 +26,7 @@ import {NgStyle} from '@angular/common';
         <template ngSwitchDefault>Other</template>
     </h1>
      
-    `,
-    directives: [NgStyle]
+    `
 })
 export class DemoBuiltinDirectives {
     style = 'normal';
@@ -46,17 +45,7 @@ export class DemoBuiltinDirectives {
         this.isOn = !this.isOn;
         this.isDisabled = !this.isDisabled;
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+  
         
         
         function timeout(duration = 0) {
@@ -96,12 +85,6 @@ export class DemoBuiltinDirectives {
         // }).catch(err => {
         //     return Promise.all([timeout(100), timeout(200)]);
         // })
-        
-        
-        
-        
-        
-        
         
         
     }

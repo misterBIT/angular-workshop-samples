@@ -1,4 +1,3 @@
-import {bootstrap} from '@angular/platform-browser-dynamic'
 import {Component} from '@angular/core'
 
 import {TabsComponent} from './tabs.component';
@@ -19,11 +18,23 @@ import {TabComponent} from './tab.component';
 
             </tab>
         </tabs>
-    `,
-    directives: [TabsComponent, TabComponent]
+    `
 })
-class App {
+class AppComponent {
     tab1Name = 'Tab1 Here'
 }
 
-bootstrap(App);
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+
+@NgModule({
+  imports: [ BrowserModule ],      
+  declarations: [ AppComponent, TabsComponent, TabComponent],   
+  bootstrap: [ AppComponent ],     
+  providers: [ ]                   
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

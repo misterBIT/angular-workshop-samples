@@ -4,6 +4,7 @@ import {Car} from './car';
 
 @Component({
   selector: 'car-detail',
+  styles: ['img {max-width:200px;}'],
   template: `
   <div class="car">
     <h2>Car: {{car.plate}} <button (click)="deleteCar()">X</button> </h2>

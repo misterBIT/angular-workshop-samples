@@ -10,7 +10,6 @@ interface TabDesc {
 }
 @Component({
 	selector  : 'app',
-	//pipes     : [SafePipe],
 	template  : `
         <h1>Tabs</h1>
         <button (click)="addTab()">Add tab</button>
@@ -20,9 +19,8 @@ interface TabDesc {
             </tab>
         </tabs>
     `,
-	directives: [TabsComponent, TabComponent]
 })
-class App {
+class AppComponent {
 	tabs:TabDesc[] = [
 		{
 			title  : 'tab1',
@@ -42,5 +40,19 @@ class App {
 
 }
 
-bootstrap(App);
 
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+
+@NgModule({
+  imports: [ BrowserModule ],      
+  declarations: [ AppComponent, TabsComponent, TabComponent],   
+  bootstrap: [ AppComponent ],     
+  providers: [ ]                   
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

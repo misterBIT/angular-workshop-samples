@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    moduleId: module.id,
     template: `
         <style>section{text-align:center}</style>
         <section>

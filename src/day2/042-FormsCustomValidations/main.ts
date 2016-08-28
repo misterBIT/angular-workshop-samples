@@ -1,7 +1,4 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
 import {Component} from '@angular/core'
-import {provideForms, disableDeprecatedForms} from '@angular/forms'
-import {FORM_DIRECTIVES, FORM_PROVIDERS} from "@angular/forms";
 import {AddressEditCmp} from './address-edit.component'
 
 @Component({
@@ -10,10 +7,26 @@ import {AddressEditCmp} from './address-edit.component'
     <h2>Forms Custom Validations</h2>
     <address-edit></address-edit>
     `,
-	directives: [FORM_DIRECTIVES, AddressEditCmp],
-	providers : [FORM_PROVIDERS],
 })
-class App {
+class AppComponent {
 }
 
-bootstrap(App, [disableDeprecatedForms(), provideForms()]);
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import {EmailValidator} from './email-validator';
+import {EmailBlacklistService} from "./email-blacklist.service";
+
+
+@NgModule({
+  imports: [ BrowserModule, FormsModule, ReactiveFormsModule],      
+  declarations: [ AppComponent, AddressEditCmp, EmailValidator],   
+  bootstrap: [ AppComponent ],     
+  providers: [ EmailBlacklistService ]                   
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

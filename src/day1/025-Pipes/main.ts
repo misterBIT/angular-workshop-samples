@@ -1,4 +1,3 @@
-import {bootstrap} from '@angular/platform-browser-dynamic'
 import {Component} from '@angular/core'
 
 import {PipesDemo} from './pipes-demo.component';
@@ -8,9 +7,23 @@ import {PipesDemo} from './pipes-demo.component';
     template: `
         <h1>Pipes</h1>
         <pipes-demo></pipes-demo>
-    `,
-    directives: [PipesDemo]
+    `
 })
-class App {}
+class AppComponent {}
 
-bootstrap(App);
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+
+@NgModule({
+  imports: [ BrowserModule, ReactiveFormsModule, HttpModule],      
+  declarations: [ AppComponent, PipesDemo],   
+  bootstrap: [ AppComponent ],     
+  providers: [ ]                   
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

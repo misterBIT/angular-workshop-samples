@@ -1,6 +1,6 @@
 <style>
     .ng-touched {
-        background: blue !important
+        background: lightblue !important
     }
 </style>
 
@@ -12,7 +12,7 @@
 
             <div class="form-group">
                 <label>Promo</label>
-                <input type="text" required name="promo" #promo="ngModel" ngModel class="form-control"/>
+                <input type="text" required name="promo" #promo="ngModel" ngModel class="form-control" />
                 <div class="text-info">
                     <div [hidden]="promo.pristine">Promo is dirty</div>
                     <div [hidden]="promo.untouched">Promo is touched</div>
@@ -23,8 +23,7 @@
 
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" required [(ngModel)]="model.name" name="name" #name="ngModel"
-                       #spy>
+                <input type="text" class="form-control" required [(ngModel)]="model.name" name="name" #name="ngModel" #spy>
                 <div [hidden]="name.valid" class="alert alert-danger">
                     Name is required
                 </div>
@@ -39,7 +38,7 @@
             <div class="form-group">
                 <label for="food">Favorite Food</label>
                 <select class="form-control" required [(ngModel)]="model.favFood" name='food' #food="ngModel">
-                    <option *ngFor="let food of foods" [value]="food">{{food.name}}</option>
+                    <option *ngFor="let food of foods" [value]="food.name">{{food.name}}</option>
                 </select>
             </div>
 
@@ -50,23 +49,22 @@
             <p>{{diagnostic }}</p>
             <p>Spy Classes: {{spy.className}}</p>
         </div>
-        <!---->
-        <!--</div>-->
-        <!--<div [hidden]="!submitted">-->
-        <!--<h2>You submitted the following:</h2>-->
-        <!--<div class="row">-->
-        <!--<div class="col-xs-3">Name</div>-->
-        <!--<div class="col-xs-9  pull-left">{{ model.name }}</div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-        <!--<div class="col-xs-3">Power</div>-->
-        <!--<div class="col-xs-9 pull-left">{{ model.power }}</div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-        <!--<div class="col-xs-3">Food</div>-->
-        <!--<div class="col-xs-9 pull-left">{{ model.favFood }}</div>-->
-        <!--</div>-->
-        <!--<br>-->
-        <!--<button class="btn btn-default" (click)="submitted=false">Edit</button>-->
+    </div>
+    <div [hidden]="!submitted">
+        <h2>You submitted the following:</h2>
+        <div class="row">
+            <div class="col-xs-3">Name</div>
+            <div class="col-xs-9  pull-left">{{ model.name }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">Power</div>
+            <div class="col-xs-9 pull-left">{{ model.power }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">Food</div>
+            <div class="col-xs-9 pull-left">{{ model.favFood }}</div>
+        </div>
+        <br>
+        <button class="btn btn-default" (click)="submitted=false">Edit</button>
     </div>
 </div>
