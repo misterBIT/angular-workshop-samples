@@ -19,7 +19,6 @@ export const myToken = new OpaqueToken('CARS');
 		{provide: CarsCollection, useValue: new Car('shuk-178', 90), multi: true},
 		{provide: CarsCollection, useValue: new Car('luk-156', 20), multi: true}
 	],
-	directives: [CarComponent],
 
 	template: `
   <h2>Cars</h2>

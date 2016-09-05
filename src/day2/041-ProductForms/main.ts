@@ -9,21 +9,32 @@ import {Product4Component} from './product.component.4';
 
 @Component({
 	selector  : 'app',
-	directives: [FORM_DIRECTIVES, Product1Component, Product2Component, Product3Component, Product4Component],
-	providers : [FORM_PROVIDERS],
 	template  : `
     <h1>Handling Forms</h1>
     <product1></product1>
-    <!--<hr>-->
     <!--<product2></product2>-->
-    <!--<hr>-->
     <!--<product3></product3>-->
-    <!--<hr>-->
     <!--<product4></product4>-->
     `
 
 })
-class App {
+class AppComponent {
 }
 
-bootstrap(App, [disableDeprecatedForms(), provideForms()]);
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+
+@NgModule({
+  imports: [ BrowserModule, FormsModule, ReactiveFormsModule],      
+  declarations: [ AppComponent, Product1Component, Product2Component, Product3Component, Product4Component],   
+  bootstrap: [ AppComponent ],     
+  providers: [ ]                   
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

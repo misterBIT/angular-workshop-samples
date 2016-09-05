@@ -63,7 +63,7 @@ export class MyComp {
    // provide a custom track-by function that tracks a person based on
   // the ID, not the object identity (aka object reference).
   personIdentity( index, person ) {
-      console.log( "TrackBy:", person.name, "at index", index );
+    //   console.log( "TrackBy:", person.name, "at index", index );
       return( person.id );
   }
 

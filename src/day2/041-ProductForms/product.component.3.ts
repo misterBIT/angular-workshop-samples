@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {
 	FormGroup,
 	FormBuilder,
-	REACTIVE_FORM_DIRECTIVES,
 	Validators,
 	FormControl
 }    from '@angular/forms';
@@ -38,8 +37,7 @@ import {
             <button type="submit" class="btn btn-success">Submit</button>  
         </form>  
     </div>  
-    `,
-	directives: [REACTIVE_FORM_DIRECTIVES],
+    `
 })
 export class Product3Component {
 	myForm:FormGroup;

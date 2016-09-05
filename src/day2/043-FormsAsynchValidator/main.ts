@@ -1,14 +1,11 @@
 import {Component} from "@angular/core";
-import {bootstrap} from "@angular/platform-browser-dynamic";
 import {
-	provideForms,
-	disableDeprecatedForms,
-	REACTIVE_FORM_DIRECTIVES,
 	FormBuilder,
 	Validators,
 	FormControl,
 	FormGroup
 } from "@angular/forms";
+
 import {UsernameValidator} from "./usernameValidator.ts";
 
 @Component({
@@ -31,11 +28,10 @@ import {UsernameValidator} from "./usernameValidator.ts";
 			</div>
 			
 		</form>
-	`,
-	directives: [REACTIVE_FORM_DIRECTIVES]
+	`
 })
 
-class App {
+class AppComponent {
 
 	form:FormGroup;
 
@@ -63,4 +59,19 @@ class App {
 }
 
 
-bootstrap(App, [disableDeprecatedForms(), provideForms()]);
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+
+@NgModule({
+  imports: [ BrowserModule, ReactiveFormsModule],      
+  declarations: [ AppComponent],   
+  bootstrap: [ AppComponent ],     
+  providers: [ ]                   
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

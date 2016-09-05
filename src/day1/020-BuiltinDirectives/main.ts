@@ -1,4 +1,3 @@
-import {bootstrap} from '@angular/platform-browser-dynamic'
 import {Component} from '@angular/core'
 
 import {DemoBuiltinDirectives} from './demo-builtin-directives.component';
@@ -7,9 +6,23 @@ import {DemoBuiltinDirectives} from './demo-builtin-directives.component';
     selector: 'app',
     template: `
     <demo-builtin-directives></demo-builtin-directives>
-    `,
-    directives: [DemoBuiltinDirectives]
+    `
 })
-class App {}
+class AppComponent {}
 
-bootstrap(App);
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+
+@NgModule({
+  imports: [ BrowserModule],      
+  declarations: [ AppComponent, DemoBuiltinDirectives],   
+  bootstrap: [ AppComponent ],     
+  providers: [ ]                   
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

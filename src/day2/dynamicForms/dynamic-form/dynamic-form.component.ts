@@ -1,5 +1,5 @@
 import {Component, Injectable, Input, Output, EventEmitter} from '@angular/core';
-import {FormGroup, FormBuilder, Validators, REACTIVE_FORM_DIRECTIVES} from '@angular/forms';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -86,7 +86,6 @@ export class FormControlService {
 
 @Component({
 	selector: 'df-field',
-	directives:[REACTIVE_FORM_DIRECTIVES],
 	template: `
 <div [formGroup]="form" class="form-group">
   <label [attr.for]="field.key" class="control-label">{{field.label}}</label>
@@ -127,9 +126,7 @@ export class DynamicFormFieldComponent {
   <div *ngIf="payLoad" class="form-row">
     <br><strong>Saved the following values</strong><br>{{payLoad}}
   </div>
-</div>`,
-	directives: [DynamicFormFieldComponent, REACTIVE_FORM_DIRECTIVES],
-	providers : [FormControlService]
+</div>`
 })
 export class DynamicFormComponent {
 	@Input() fields:FormBase<any>[] = [];

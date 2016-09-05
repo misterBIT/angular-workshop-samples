@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {
 	FormGroup,
 	FormBuilder,
-	REACTIVE_FORM_DIRECTIVES,
 	Validators,
 	AbstractControl,
 	FormControl
@@ -11,7 +10,6 @@ import {
 
 // ************** Sample2: Using the FormBuilder, formGroup &  formControlName **********************
 @Component({
-	directives: [REACTIVE_FORM_DIRECTIVES],
 	selector  : 'product2',
 	template  : `
     <div>  
@@ -27,10 +25,11 @@ import {
                             formControlName="barcode">
                 </label>
                 
-                <div *ngIf="myForm.controls.barcode.touched && !barcode.valid"  class="alert alert-danger">Barcode is invalid!</div>
+                <div *ngIf="myForm.controls.barcode.touched && myForm.controls.barcode.invalid"  class="alert alert-danger">Barcode is invalid!</div>
                 <div *ngIf="myForm.controls.barcode.hasError('required')" class="alert alert-danger">Barcode is Required!</div>
                 <div *ngIf="myForm.hasError('required', 'barcode')" class="alert alert-danger">Barcode is Required!!</div>
                 <div *ngIf="myForm.hasError('maxlength','barcode')" class="alert alert-danger">Barcode is Too Long!</div>
+                <div *ngIf="myForm.hasError('minlength','barcode')" class="alert alert-danger">Barcode is Too Short</div>
                 
         </div>
     
@@ -45,7 +44,7 @@ export class Product2Component {
 
 	constructor(formBuilder:FormBuilder) {
 		this.myForm = new FormGroup({
-			barcode: new FormControl('123', [Validators.required])
+			barcode: new FormControl('123', [Validators.required,Validators.minLength(3),Validators.maxLength(10)])
 		});
 		// In the first example,  ngForm creates it's own FormGroup,
 		// in this case, we want to use our instance variable myForm, which we created with our FormBuilder.

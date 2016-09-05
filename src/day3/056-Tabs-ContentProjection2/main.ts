@@ -20,9 +20,21 @@ import {TabComponent} from './tab.component';
             </tab>
         </tabs>
     `,
-    directives: [TabsComponent, TabComponent]
 })
-class App {}
+class AppComponent {}
 
-bootstrap(App);
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+
+@NgModule({
+  imports: [ BrowserModule ],      
+  declarations: [ AppComponent, TabsComponent, TabComponent],   
+  bootstrap: [ AppComponent ],     
+  providers: [ ]                   
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
 

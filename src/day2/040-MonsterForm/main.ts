@@ -1,6 +1,5 @@
-import {bootstrap} from '@angular/platform-browser-dynamic'
 import {Component} from '@angular/core'
-import {provideForms, disableDeprecatedForms} from '@angular/forms'
+import {provideForms} from '@angular/forms'
 
 import {MonsterEditComponent} from './monster-edit.component';
 
@@ -9,9 +8,24 @@ import {MonsterEditComponent} from './monster-edit.component';
 	template  : `
     <monster-edit></monster-edit>
     `,
-	directives: [MonsterEditComponent]
 })
-class App {
+class AppComponent {
 }
 
-bootstrap(App, [disableDeprecatedForms(), provideForms()]);
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+
+@NgModule({
+  imports: [ BrowserModule, FormsModule ],      
+  declarations: [ AppComponent, MonsterEditComponent],   
+  bootstrap: [ AppComponent ],     
+  providers: [ ]                   
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

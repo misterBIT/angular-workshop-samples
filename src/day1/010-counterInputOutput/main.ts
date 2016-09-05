@@ -1,6 +1,4 @@
-import {bootstrap} from '@angular/platform-browser-dynamic'
 import {Component} from '@angular/core'
-
 import {CounterComponent} from './counter.component';
 
 @Component({
@@ -8,14 +6,28 @@ import {CounterComponent} from './counter.component';
     template: `
         <h1>Input and Output</h1>
         <counter [init]="7" (change)="counterChanged($event)"></counter>
-    `,
-    directives: [CounterComponent]
+    `
 })
-class App {
+class AppComponent {
     counterChanged($event){
         console.log('counter value: ' , $event);
     }
 
 }
 
-bootstrap(App);
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+
+@NgModule({
+  imports: [ BrowserModule ],      
+  declarations: [ AppComponent, CounterComponent],   
+  bootstrap: [ AppComponent ],     
+  providers: [ ]                   
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+

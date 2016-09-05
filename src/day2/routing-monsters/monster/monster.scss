@@ -1,0 +1,16 @@
+.monsters {
+  li {
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+    text-align:center;
+    cursor: pointer;
+    &:hover {
+      background-color: #111;
+      border-radius:5px;
+    }
+  }
+  img {
+    max-width: 100px;
+  }
+}
