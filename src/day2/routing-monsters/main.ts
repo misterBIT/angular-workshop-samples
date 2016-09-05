@@ -18,11 +18,15 @@ import { MonsterService } from './monster/monster.service';
 import {AuthService  } from './shared/auth/auth.service';
 import {AuthGuard  } from './shared/auth/auth-guard.service';
 import {CanDeactivateGuard  } from './shared/can-deactivate-guard.service';
+import {HomeComponent} from "./home/home.component";
+import {CarDetailComponent} from "./car/car-detail.component";
+import {CarListComponent} from "./car/car-list.component";
+import {LoginComponent} from "./login/login.component";
 
 
 @NgModule({
   imports: [ BrowserModule, FormsModule, RouterModule, routing],      
-  declarations: [ AppComponent],   
+  declarations: [ AppComponent,HomeComponent,CarDetailComponent,CarListComponent,LoginComponent],
   bootstrap: [ AppComponent ],     
   providers: [ MonsterService, CarService, DialogService, AuthService, AuthGuard, CanDeactivateGuard ]                   
 })
