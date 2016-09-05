@@ -1,6 +1,4 @@
-import {bootstrap} from "@angular/platform-browser-dynamic";
-import {JSONP_PROVIDERS} from "@angular/http";
-import {disableDeprecatedForms, provideForms} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 //this
 import {WikipediaService} from './wikipedia-service'
 import {App} from './app';
@@ -11,4 +9,20 @@ import {App} from './app';
 //import {WikipediaService} from './wikipedia-servico'
 
 
-bootstrap(App, [provideForms(), disableDeprecatedForms(), WikipediaService, JSONP_PROVIDERS]).catch(err => console.error(err));
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {NgModule}      from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
+import {JsonpModule} from "@angular/http";
+
+
+@NgModule({
+	imports: [BrowserModule, FormsModule, ReactiveFormsModule, JsonpModule],
+	declarations: [App],
+	bootstrap: [App],
+	providers: [WikipediaService]
+})
+export class AppModule {
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);

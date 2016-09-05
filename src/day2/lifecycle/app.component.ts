@@ -1,12 +1,4 @@
 import {Component} from '@angular/core';
-
-import {AfterContentParentComponent} from './after-content.component';
-import {AfterViewParentComponent} from './after-view.component';
-import {CounterParentComponent} from './counter.component';
-import {OnChangesParentComponent} from './on-changes.component';
-import {PeekABooParentComponent} from './peek-a-boo-parent.component';
-import {SpyParentComponent} from './spy.component';
-import {CartBadgeCmp} from './cart/cart-badge.component'
 import {ItemsService} from './cart/cart.service'
 
 
@@ -29,16 +21,7 @@ import {ItemsService} from './cart/cart.service'
     <cart-badge [itemStream]="itemsService.items$"></cart-badge>
     <button (click)="addItem()" >Add Item</button>
   `,
-	directives: [
-		AfterContentParentComponent,
-		AfterViewParentComponent,
-		OnChangesParentComponent,
-		PeekABooParentComponent,
-		SpyParentComponent,
-		CounterParentComponent,
-		CartBadgeCmp
-	],
-	providers : [ItemsService]
+
 })
 export class AppComponent {
 	constructor(private itemsService:ItemsService) {

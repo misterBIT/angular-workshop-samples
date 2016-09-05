@@ -1,10 +1,23 @@
-import { bootstrap }    from '@angular/platform-browser-dynamic';
-import { disableDeprecatedForms, provideForms } from '@angular/forms';
 import 'rxjs/Rx';
 
 import { AppComponent } from './app.component';
 
-bootstrap(AppComponent, [
-  disableDeprecatedForms(),
-  provideForms(),
-]);
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+
+@NgModule({
+  imports: [ BrowserModule, FormsModule ],
+  declarations: [ AppComponent],
+  bootstrap: [ AppComponent ],
+  providers: [ ]
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+

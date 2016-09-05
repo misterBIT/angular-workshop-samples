@@ -1,12 +1,24 @@
-import {bootstrap}    from '@angular/platform-browser-dynamic';
-import {disableDeprecatedForms, provideForms} from '@angular/forms';
-
 import {AppComponent} from './app.component';
 
-bootstrap(AppComponent, [
-	disableDeprecatedForms(),
-	provideForms(),
-]);
+
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {NgModule, forwardRef}      from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule, ReactiveFormsModule, NG_VALIDATORS} from '@angular/forms';
+import {EqualValidator} from "./equal-validator.directive";
+
+
+@NgModule({
+	imports: [BrowserModule, FormsModule, ReactiveFormsModule],
+	declarations: [AppComponent, EqualValidator],
+	bootstrap: [AppComponent],
+	providers: [{provide: NG_VALIDATORS, useExisting: forwardRef(() => EqualValidator), multi: true}]
+})
+export class AppModule {
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
 /*. The component
  *. Username  - requirement: required, must be 5–8 characters
  *. Email - required, must be valid email format

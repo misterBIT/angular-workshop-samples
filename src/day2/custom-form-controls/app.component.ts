@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
-import { CounterInputComponent, createCounterRangeValidator } from './counter-input.component';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app',
@@ -16,7 +15,6 @@ import { CounterInputComponent, createCounterRangeValidator } from './counter-in
     <p *ngIf="!form.valid">Form is invalid!</p>
     <pre>{{ form.value | json }}</pre>
   `,
-  directives: [CounterInputComponent, REACTIVE_FORM_DIRECTIVES]
 })
 export class AppComponent {
 

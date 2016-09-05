@@ -4,7 +4,7 @@ import {Theme} from './theme.interface';
 
 @Component({
 	selector   : 'app',
-	templateUrl: 'app.component.html',
+	template: require('./app.component.html'),
 })
 export class AppComponent {
 	public user:User;

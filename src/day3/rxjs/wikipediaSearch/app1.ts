@@ -5,12 +5,11 @@ import "rxjs/add/operator/map";
 import "rxjs/add/operator/debounceTime";
 import "rxjs/add/operator/distinctUntilChanged";
 import "rxjs/add/operator/switchMap";
-import {FormControl, REACTIVE_FORM_DIRECTIVES} from "@angular/forms";
+import {FormControl} from "@angular/forms";
 
 @Component({
-	selector  : 'app',
-	directives: [REACTIVE_FORM_DIRECTIVES],
-	template  : `
+	selector: 'app',
+	template: `
     <div>
       <h2>Wikipedia Search</h2>
       <input type="text" [formControl]="term"/>
@@ -21,10 +20,10 @@ import {FormControl, REACTIVE_FORM_DIRECTIVES} from "@angular/forms";
   `
 })
 export class App {
-	items$:Observable<Array<string>>;
+	items$: Observable<Array<string>>;
 	term = new FormControl();
 
-	constructor(private wikipediaService:WikipediaService) {
+	constructor(private wikipediaService: WikipediaService) {
 		this.items$ = this.term.valueChanges
 			.debounceTime(400)
 			.distinctUntilChanged()

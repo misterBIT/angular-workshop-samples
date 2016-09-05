@@ -1,11 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from './user.interface';
-import {EqualValidator} from './equal-validator.directive';
 require('./app.component.css');
 @Component({
 	selector   : 'app',
 	templateUrl: './app.component.html',
-	directives : [EqualValidator]
 })
 export class AppComponent implements OnInit {
 	public user:User;
