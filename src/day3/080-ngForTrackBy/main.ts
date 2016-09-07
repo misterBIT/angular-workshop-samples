@@ -1,6 +1,6 @@
 import {Component} from '@angular/core'
 
-import {MyComp} from './my.component';
+import {MyComp, NodeLoggerDirective} from './my.component';
 
 @Component({
     selector: 'app',
@@ -18,7 +18,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [ BrowserModule ],      
-  declarations: [ AppComponent, MyComp ],   
+  declarations: [ AppComponent, MyComp ,NodeLoggerDirective],
   bootstrap: [ AppComponent ],     
   providers: [ ]                   
 })
