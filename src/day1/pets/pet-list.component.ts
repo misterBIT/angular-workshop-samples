@@ -15,6 +15,7 @@ import {PetService} from './pet.service';
 
 })
 export class PetList {
+	@Input()
 	letter = '';
 
 

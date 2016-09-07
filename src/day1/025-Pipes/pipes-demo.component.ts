@@ -22,8 +22,7 @@ import {DateDescPipe} from './date-desc.pipe';
         <hr />
         <p>Something is cooking...  <b>{{prmMsg | async}}</b>  </p>
 
-    `,
-	pipes   : [DateDescPipe]
+    `
 })
 export class PipesDemo {
 	pi:number= 3.1415927;

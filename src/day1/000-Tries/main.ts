@@ -1,6 +1,4 @@
-import {bootstrap} from '@angular/platform-browser-dynamic'
 import {Component} from '@angular/core'
-
 import {TriesComponent} from './tries.component';
 
 @Component({
@@ -12,10 +10,13 @@ import {TriesComponent} from './tries.component';
 })
 class AppComponent {}
 
+
+
+
+////module boilerplate
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 
 @NgModule({
   imports: [ BrowserModule ],      
@@ -25,5 +26,6 @@ import { BrowserModule } from '@angular/platform-browser';
 })
 export class AppModule { }
 
+//// bootstrap
 platformBrowserDynamic().bootstrapModule(AppModule);
 

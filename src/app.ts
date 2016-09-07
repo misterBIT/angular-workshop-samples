@@ -2,13 +2,13 @@
  Day1
  *********/
 
-// import "./day1/000-Tries/main";
-// import "./day1/010-counterInputOutput/main";
-// import "./day1/012-DisplayAndEvents/main";
-// import "./day1/020-BuiltinDirectives/main";
-// import "./day1/025-Pipes/main";
-// import "./day1/070-Cars/main";
-//import './day1/pets/main';
+//import "./day1/000-Tries/main";
+//import "./day1/010-counterInputOutput/main";
+//import "./day1/012-DisplayAndEvents/main";
+//import "./day1/020-BuiltinDirectives/main";
+//import "./day1/025-Pipes/main";
+//import "./day1/070-Cars/main";
+import './day1/pets/main';
 /**********
  Day2
  *********/
@@ -18,7 +18,7 @@
 // import "./day2/042-FormsCustomValidations/main";
 // import "./day2/043-FormsAsynchValidator/main";
 // import "./day2/dynamicForms/main.ts";
- import "./day2/routing-monsters/main.ts";
+ //import "./day2/routing-monsters/main.ts";
 
 /**********
  Day3

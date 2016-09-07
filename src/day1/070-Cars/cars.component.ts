@@ -1,6 +1,5 @@
 import {Component, OpaqueToken, Inject}  from '@angular/core';
 import {CarService} from './car.service';
-import {CarComponent} from './car.component';
 import {CONFIG} from './common/app-config';
 import {CarsCollection, Car} from "./car";
 export const myToken = new OpaqueToken('CARS');
