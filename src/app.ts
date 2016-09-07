@@ -22,7 +22,7 @@
 //import "./day2/custom-form-controls/main";
 //import "./day2/FormValidationsSignup-PassRetypeChallange/main";
 //import "./day2/lifecycle/main.ts";
-//import './day2/NestedModelDrivenForms/main.ts'
+import './day2/NestedModelDrivenForms/main.ts'
 //import './day2/VariousFormControls/main.ts'
 /**********
  Day3
@@ -40,4 +40,4 @@
 /**********
  Day4
  *********/
-import "./day4/CustomElementInterop/main";
+//import "./day4/CustomElementInterop/main";
