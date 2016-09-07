@@ -6,10 +6,10 @@ import {CarService} from './car.service';
 import {CarListComponent} from './car-list.component';
 import {CarDetailComponent} from './car-detail.component';
 @NgModule({
-    imports: [RouterModule.forChild(carRoutes), SharedModule],
-    declarations: [CarListComponent, CarDetailComponent],
-    providers: [CarService],
-    exports: []
+	imports: [RouterModule.forChild(carRoutes), SharedModule],
+	declarations: [CarListComponent, CarDetailComponent],
+	providers: [CarService],
+	exports: []
 })
 export class CarsModule {
 }

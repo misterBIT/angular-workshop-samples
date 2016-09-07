@@ -7,11 +7,14 @@ import {AuthGuard} from './auth/auth-guard.service';
 import {AuthService} from './auth/auth.service';
 import {DialogService} from './dialog.service';
 import {CommonModule} from '@angular/common';
+
+let CommonlyUsedModules = [CommonModule, ReactiveFormsModule, BrowserModule, FormsModule, RouterModule];
+
 @NgModule({
-    imports: [CommonModule, ReactiveFormsModule, BrowserModule, FormsModule, RouterModule],
-    declarations: [],
-    exports: [CommonModule, FormsModule, BrowserModule, RouterModule],
-    providers: [DialogService, AuthService, AuthGuard, CanDeactivateGuard]
+	imports: CommonlyUsedModules,
+	declarations: [],
+	exports: CommonlyUsedModules,
+	providers: [DialogService, AuthService, AuthGuard, CanDeactivateGuard]
 })
 export class SharedModule {
 }

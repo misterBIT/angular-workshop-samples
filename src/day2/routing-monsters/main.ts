@@ -7,14 +7,14 @@ import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from "./login/login.component";
 import {SharedModule} from './shared/shared.module';
 import {MonstersModule} from './monster/monster.module';
-import {CarsModule} from './car/cats.module';
+import {CarsModule} from "./car/car.module";
 
 
 @NgModule({
-    imports: [SharedModule, MonstersModule, CarsModule, RouterModule.forRoot(routes)],
-    declarations: [AppComponent, HomeComponent, LoginComponent], //CarDetailComponent,CarListComponent
-    bootstrap: [AppComponent],
-    providers: []
+	imports: [SharedModule, MonstersModule, CarsModule, RouterModule.forRoot(routes)],
+	declarations: [AppComponent, HomeComponent, LoginComponent], //CarDetailComponent,CarListComponent
+	bootstrap: [AppComponent],
+	providers: []
 })
 export class AppModule {
 }

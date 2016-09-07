@@ -78,17 +78,16 @@ export class MonsterDetailComponent implements OnInit, OnDestroy {
         this._router.navigate(['/monster', {id: monsterId, foo: 'bar'}]);
     }
 
-    // depretcated
-    // canDeactivate(): Observable<boolean> | boolean {
-    //     // Allow synchronous navigation (`true`) if no crisis or the crisis is unchanged
-    //     if (!this._monster || this._monster.name === this._editName) {
-    //         return true;
-    //     }
-    //     // Otherwise ask the user with the dialog service and return its
-    //     // promise which resolves to true or false when the user decides
-    //     let p = this._dialog.confirm('Discard changes?');
-    //     let o = Observable.fromPromise(p);
-    //     return o;
-    // }
+    canDeactivate(): Observable<boolean> | boolean {
+        // Allow synchronous navigation (`true`) if no crisis or the crisis is unchanged
+        if (!this._monster || this._monster.name === this._editName) {
+            return true;
+        }
+        // Otherwise ask the user with the dialog service and return its
+        // promise which resolves to true or false when the user decides
+        let p = this._dialog.confirm('Discard changes?');
+        let o = Observable.fromPromise(p);
+        return o;
+    }
 
 }
