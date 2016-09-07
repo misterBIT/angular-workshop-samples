@@ -1,29 +1,29 @@
 import {Component, Injectable, Input, Output, EventEmitter} from '@angular/core';
-import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 
 ////////////////////////////////////////////////////////////////////////
 
 export class FormBase<T> {
-	value:T;
-	key:string;
-	label:string;
-	required:boolean;
-	readonly:boolean;
-	disabled:boolean;
-	order:number;
-	controlType:string;
-	placeholder:string;
+	value: T;
+	key: string;
+	label: string;
+	required: boolean;
+	readonly: boolean;
+	disabled: boolean;
+	order: number;
+	controlType: string;
+	placeholder: string;
 
-	constructor(options:{
-		value?:T,
-		key?:string,
-		label?:string,
-		required?:boolean,
-		"readonly"?:boolean,
-		disabled?:boolean,
-		order?:number,
-		controlType?:string,
-		placeholder?:string
+	constructor(options: {
+		value?: T,
+		key?: string,
+		label?: string,
+		required?: boolean,
+		"readonly"?: boolean,
+		disabled?: boolean,
+		order?: number,
+		controlType?: string,
+		placeholder?: string
 	} = {}) {
 		this.value = options.value;
 		this.key = options.key || '';
@@ -42,9 +42,9 @@ export class FormBase<T> {
 
 export class TextboxField extends FormBase<string> {
 	controlType = 'textbox';
-	type:string;
+	type: string;
 
-	constructor(options:{} = {}) {
+	constructor(options: {} = {}) {
 		super(options);
 		this.type = options['type'] || '';
 	}
@@ -55,9 +55,9 @@ export class TextboxField extends FormBase<string> {
 
 export class DropdownField extends FormBase<string> {
 	controlType = 'dropdown';
-	options:{key:string, value:string}[] = [];
+	options: {key: string, value: string}[] = [];
 
-	constructor(options:{} = {}) {
+	constructor(options: {} = {}) {
 		super(options);
 		this.options = options['options'] || [];
 	}
@@ -69,14 +69,14 @@ export class DropdownField extends FormBase<string> {
 @Injectable()
 export class FormControlService {
 
-	constructor(private fb:FormBuilder) {
+	constructor(private fb: FormBuilder) {
 	}
 
-	toControlGroup(fields:FormBase<any>[]) {
+	toControlGroup(fields: FormBase<any>[]) {
 		let group = {};
 
 		fields.forEach(field => {
-			group[field.key] = field.required ? [field.value || '', Validators.required] : [field.value || ''];
+			group[field.key] = new FormControl({value: field.value, disabled: field.disabled}, (field.required) ? Validators.required : []);
 		});
 		return this.fb.group(group);
 	}
@@ -90,7 +90,7 @@ export class FormControlService {
 <div [formGroup]="form" class="form-group">
   <label [attr.for]="field.key" class="control-label">{{field.label}}</label>
   <div [ngSwitch]="field.controlType">
-    <input *ngSwitchCase="'textbox'" [formControlName]="field.key" [id]="field.key" [type]="field.type" class="form-control" [placeholder]="field.placeholder" [disabled]="field.disabled" [readonly]="field.readonly">
+    <input *ngSwitchCase="'textbox'" [formControlName]="field.key" [id]="field.key" [type]="field.type"  class="form-control" [placeholder]="field.placeholder" [readonly]="field.readonly">
     <select [id]="field.key" *ngSwitchCase="'dropdown'" [formControlName]="field.key" class="form-control">
       <option style="display:none" value="">Choose an option</option>
       <option *ngFor="let opt of field.options" [value]="opt.key">{{opt.value}}</option>
@@ -100,8 +100,8 @@ export class FormControlService {
 </div>`
 })
 export class DynamicFormFieldComponent {
-	@Input() field:FormBase<any>;
-	@Input() form:FormGroup;
+	@Input() field: FormBase<any>;
+	@Input() form: FormGroup;
 
 	get isValid() {
 		return this.form.controls[this.field.key].valid;
@@ -111,8 +111,8 @@ export class DynamicFormFieldComponent {
 ////////////////////////////////////////////////////////////////////////
 
 @Component({
-	selector  : 'dynamic-form',
-	template  : `
+	selector: 'dynamic-form',
+	template: `
 <div>
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
     <div *ngFor="let field of fields" class="form-row">
@@ -129,12 +129,12 @@ export class DynamicFormFieldComponent {
 </div>`
 })
 export class DynamicFormComponent {
-	@Input() fields:FormBase<any>[] = [];
-	@Output('send') submitted:EventEmitter<any> = new EventEmitter();
-	form:FormGroup;
+	@Input() fields: FormBase<any>[] = [];
+	@Output('send') submitted: EventEmitter<any> = new EventEmitter();
+	form: FormGroup;
 	payLoad = '';
 
-	constructor(private qcs:FormControlService) {
+	constructor(private qcs: FormControlService) {
 	}
 
 	ngOnInit() {

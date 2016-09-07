@@ -17,7 +17,6 @@ import {LoggerService}  from './logger.service';
   </div>
   `,
   styles: ['.counter {background: LightYellow; padding: 8px; margin-top: 8px}'],
-  directives:[Spy]
 })
 export class MyCounter implements OnChanges {
   @Input() counter: number;
@@ -58,7 +57,6 @@ export class MyCounter implements OnChanges {
    </div>
   `,
   styles: ['.parent {background: gold; padding: 10px; margin:100px 8px;}'],
-  directives: [MyCounter],
   providers: [LoggerService]
 })
 export class CounterParentComponent {

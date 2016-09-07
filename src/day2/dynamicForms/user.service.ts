@@ -15,7 +15,8 @@ export class UserService {
       new TextboxField({
         key:'username',
         label:'Name',
-        required: true,
+        // required: true,
+        disabled:true,
         value: objectModel.username,
         placeholder: 'Username',
         order: 1

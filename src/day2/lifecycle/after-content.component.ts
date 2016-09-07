@@ -1,15 +1,15 @@
 import {
-  Component, Input, Output,
-  AfterContentChecked, AfterContentInit, ContentChild,
-  AfterViewInit, ViewChild
+	Component, Input, Output,
+	AfterContentChecked, AfterContentInit, ContentChild,
+	AfterViewInit, ViewChild
 } from '@angular/core';
 
 import {ChildComponent} from './child.component';
 import {LoggerService}  from './logger.service';
 
 @Component({
-  selector: 'after-content',
-  template: `
+	selector: 'after-content',
+	template: `
   <div class="after-content">
     <div>-- child content begins --</div>
 
@@ -18,59 +18,61 @@ import {LoggerService}  from './logger.service';
     <div>-- child content ends --</div>
   </div>
   `,
-  styles: ['.after-content {background: LightCyan; padding: 8px;}'],
+	styles: ['.after-content {background: LightCyan; padding: 8px;}'],
 
 })
-export class AfterContentComponent
-  implements AfterContentChecked, AfterContentInit, AfterViewInit {
+export class AfterContentComponent implements AfterContentChecked, AfterContentInit, AfterViewInit {
 
-  private _logger:LoggerService;
+	private _logger: LoggerService;
 
-  constructor(logger:LoggerService){
-    this._logger = logger;
-    logger.log('AfterContent ctor: ' + this._getMessage());
-  }
+	constructor(logger: LoggerService) {
+		this._logger = logger;
+		logger.log('AfterContent ctor: ' + this._getMessage());
+	}
 
-  // Query for a CONTENT child of type `ChildComponent`
-  @ContentChild(ChildComponent) contentChild: ChildComponent;
+	// Query for a CONTENT child of type `ChildComponent`
+	@ContentChild(ChildComponent) contentChild: ChildComponent;
 
-  // Query for a VIEW child of type`ChildComponent`
-  // No such VIEW child exists!
-  // This component holds content but no view of that type.
-  @ViewChild(ChildComponent) viewChild: ChildComponent;
+	// Query for a VIEW child of type`ChildComponent`
+	// No such VIEW child exists!
+	// This component holds content but no view of that type.
+	@ViewChild(ChildComponent) viewChild: ChildComponent;
 
 
-  ///// Hooks
-  ngAfterContentInit() {
-    // contentChild is set after the content has been initialized
-    this._logger.log('AfterContentInit: ' + this._getMessage());
-  }
+	///// Hooks
+	ngAfterContentInit() {
+		// contentChild is set after the content has been initialized
+		this._logger.log('AfterContentInit: ' + this._getMessage());
+	}
 
-  ngAfterViewInit() {
-    this._logger.log(`AfterViewInit: There is ${this.viewChild ? 'a' : 'no'} view child`);
-  }
+	ngAfterViewInit() {
+		this._logger.log(`AfterViewInit: There is ${this.viewChild ? 'a' : 'no'} view child`);
+	}
 
-  private _prevHero:string;
-  ngAfterContentChecked() {
-    // contentChild is updated after the content has been checked
-    // Called frequently; only report when the hero changes
-    if (!this.contentChild || this._prevHero === this.contentChild.hero) {return;}
-    this._prevHero = this.contentChild.hero;
-    this._logger.log('AfterContentChecked: ' + this._getMessage());
-  }
+	private _prevHero: string;
 
-  private _getMessage(): string {
-    let cmp = this.contentChild;
-    return cmp ? `"${cmp.hero}" child content` : 'no child content';
-  }
+	ngAfterContentChecked() {
+		// contentChild is updated after the content has been checked
+		// Called frequently; only report when the hero changes
+		if (!this.contentChild || this._prevHero === this.contentChild.hero) {
+			return;
+		}
+		this._prevHero = this.contentChild.hero;
+		this._logger.log('AfterContentChecked: ' + this._getMessage());
+	}
+
+	private _getMessage(): string {
+		let cmp = this.contentChild;
+		return cmp ? `"${cmp.hero}" child content` : 'no child content';
+	}
 
 }
 
 /***************************************/
 
 @Component({
-  selector: 'after-content-parent',
-  template: `
+	selector: 'after-content-parent',
+	template: `
   <div class="parent">
     <h2>AfterContent</h2>
 
@@ -85,24 +87,23 @@ export class AfterContentComponent
     <div *ngFor="let msg of hookLog">{{msg}}</div>
   </div>
   `,
-  styles: ['.parent {background: powderblue; padding: 8px; margin:100px 8px;}'],
-  directives: [AfterContentComponent, ChildComponent],
-  providers:[LoggerService]
+	styles: ['.parent {background: powderblue; padding: 8px; margin:100px 8px;}'],
+	providers: [LoggerService]
 })
 export class AfterContentParentComponent {
 
-  hookLog:string[];
-  hero = 'Magneta';
-  showChild = true;
+	hookLog: string[];
+	hero = 'Magneta';
+	showChild = true;
 
-  constructor(logger:LoggerService){
-    this.hookLog = logger.logs;
-  }
+	constructor(logger: LoggerService) {
+		this.hookLog = logger.logs;
+	}
 }
 
 
 /*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
+ Copyright 2016 Google Inc. All Rights Reserved.
+ Use of this source code is governed by an MIT-style license that
+ can be found in the LICENSE file at http://angular.io/license
+ */

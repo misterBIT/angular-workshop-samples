@@ -21,7 +21,6 @@ import {LoggerService}  from './logger.service';
   </div>
   `,
   styles: ['.parent {background: moccasin; padding: 10px; margin:100px 8px}'],
-  directives: [PeekABooComponent],
   providers: [LoggerService]
 })
 export class PeekABooParentComponent {

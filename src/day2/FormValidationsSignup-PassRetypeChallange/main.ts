@@ -11,8 +11,7 @@ import {EqualValidator} from "./equal-validator.directive";
 @NgModule({
 	imports: [BrowserModule, FormsModule, ReactiveFormsModule],
 	declarations: [AppComponent, EqualValidator],
-	bootstrap: [AppComponent],
-	providers: [{provide: NG_VALIDATORS, useExisting: forwardRef(() => EqualValidator), multi: true}]
+	bootstrap: [AppComponent]
 })
 export class AppModule {
 }

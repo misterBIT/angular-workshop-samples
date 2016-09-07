@@ -29,7 +29,7 @@ import {
                             [formControl]="myForm.controls['barcode']">
                     </label>                    
                     <!-- You can avoid exposing each control by using either form.find: --> 
-                    <div *ngIf="myForm.find('barcode').touched && myForm.find('barcode').hasError('required')"  class="alert alert-danger">Barcode is Required</div>
+                    <div *ngIf="myForm.controls['barcode'].touched && myForm.controls['barcode'].hasError('required')"  class="alert alert-danger">Barcode is Required</div>
                     <!-- or by exposing the directive via a template-local-variable, and access the control it is referencing: --> 
                     <div *ngIf="barcode.control.touched && barcode.control.hasError('invalidBarcode')"  class="alert alert-warning">Barcode is in wrong format</div>
             </div>

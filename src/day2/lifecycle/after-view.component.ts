@@ -25,7 +25,6 @@ import {LoggerService}  from './logger.service';
   </div>
   `,
   styles: ['.parent {background: burlywood; padding: 8px; margin:100px 8px;}'],
-  directives: [ChildComponent],
   providers:[LoggerService]
 })
 export class AfterViewParentComponent

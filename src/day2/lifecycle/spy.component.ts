@@ -25,7 +25,6 @@ import {Spy} from './spy.directive';
      '.parent {background: khaki; padding: 10px; margin:100px 8px}',
      '.heroes {background: LightYellow; padding: 0 8px}'
   ],
-  directives: [Spy],
   providers: [LoggerService]
 })
 export class SpyParentComponent {

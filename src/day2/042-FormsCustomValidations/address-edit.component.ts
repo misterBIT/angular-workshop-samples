@@ -1,7 +1,5 @@
 import {Component} from '@angular/core';
-import {FormGroup, FormControl, Validators, REACTIVE_FORM_DIRECTIVES} from '@angular/forms';
-
-import {validateEmail} from './email-validator';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {EmailBlacklistService} from "./email-blacklist.service";
 
 @Component({
@@ -13,8 +11,8 @@ import {EmailBlacklistService} from "./email-blacklist.service";
             Email: <input type="email" formControlName="email" required validateEmail /> 
             `// validators can be used by template or by model
 	+ `
-            <div class="alert alert-warning" *ngIf="myForm.find('email').hasError('validateEmail')" >Mail is Invalid</div>
-            <div class="alert alert-danger" *ngIf="myForm.find('email').hasError('blacklist')" >Wait Here</div>
+            <div class="alert alert-warning" *ngIf="myForm.controls['email'].hasError('validateEmail')" >Mail is Invalid</div>
+            <div class="alert alert-danger" *ngIf="myForm.controls['email'].hasError('blacklist')" >Wait Here</div>
             
             <input type="submit" />
         </form>
