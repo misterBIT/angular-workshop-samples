@@ -1,9 +1,9 @@
-import {Component,  OnInit}  from '@angular/core';
+import {Component, OnInit, Input}  from '@angular/core';
 import {Car, CarService}   from './car.service.ts';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-  template: `
+	template: `
   <style>img {float:right;width:200px;transition:1s} img:hover {width:300px;}</style>
   <div *ngIf="car">
     <h2><span class="badge">{{car.id}}</span> Car: {{car.name}} </h2>
@@ -16,23 +16,20 @@ import {ActivatedRoute, Router} from '@angular/router';
   </div>
   `,
 })
-export class CarDetailComponent implements OnInit  {
-  car: Car;
+export class CarDetailComponent {
+	car: Car;
 
-  constructor(
-    private _router:Router,
-    private _route:ActivatedRoute,
-    private _service:CarService){}
+	ngOnInit() {
+		this.car = this._route.snapshot.data['car'];
+	}
 
-  ngOnInit() {
-    let id = this._route.snapshot.params['id'];
-    this._service.getCar(id).then(car => this.car = car);
-  }
+	constructor(private _router: Router, private _route: ActivatedRoute) {
+	}
 
-  gotoCars() {
-    let carId = this.car ? this.car.id : null;
-    // TODO: Pass along the car id if available so that the CarList component can select that car.
-    this._router.navigate(['/car', {id:carId, test: 'something'}]);
-  }
+	gotoCars() {
+		let carId = this.car ? this.car.id : null;
+		// TODO: Pass along the car id if available so that the CarList component can select that car.
+		this._router.navigate(['/car', {id: carId, test: 'something'}]);
+	}
 }
 

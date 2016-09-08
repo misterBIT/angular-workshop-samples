@@ -9,11 +9,6 @@ import { AuthGuard }             from '../shared/auth/auth-guard.service';
 
 export const monsterCenterRoutes: Routes = [
   {
-    path: '',
-    redirectTo: '/monster',
-    pathMatch: 'full'
-  },
-  {
     path: 'monster',
     component: MonsterCenterComponent,
     children: [
