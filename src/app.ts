@@ -18,7 +18,8 @@
 //import "./day2/042-FormsCustomValidations/main";
 //import "./day2/043-FormsAsynchValidator/main";
 //import "./day2/dynamicForms/main.ts";
-import "./day2/routing-monsters/main.ts";
+//import "./day2/routing-monsters/main.ts";
+import "./day2/forms-live-coding/main.ts";
 //import "./day2/custom-form-controls/main";
 //import "./day2/FormValidationsSignup-PassRetypeChallange/main";
 //import "./day2/lifecycle/main.ts";

@@ -1,0 +1,41 @@
+<form novalidate>
+    <md-card>
+        <md-card-title>Registration Form</md-card-title>
+        <md-card-content>
+            <div class="flex">
+                <md-input placeholder="First name"></md-input>
+                <md-input placeholder="Last name"></md-input>
+            </div>
+            <md-input placeholder="Username"></md-input>
+            <div>
+                <div>
+                    <p>Address</p>
+                    <md-input placeholder="Street" required></md-input>
+                    <div class="flex align-center">
+                        <md-input placeholder="City"></md-input>
+                        <select>
+                            <option value="" disabled>Select a state</option>
+                            <option value="CA">CA</option>
+                            <option value="NY">NY</option>
+                        </select>
+                        <md-input placeholder="zip" type="number"></md-input>
+                    </div>
+                </div>
+                <!--<button md-button (click)="addAddress()">ADD ADDRESS</button>-->
+            </div>
+            <p>Would you like a newsletter?</p>
+            <label for="yes">
+                <input type="radio" id="yes">
+                Yes
+            </label>
+            <label for="no">
+                <input type="radio" id="no">
+                No
+            </label>
+            <input type="checkbox"> I am not a robot
+        </md-card-content>
+        <md-card-actions align="end">
+            <button md-button color="primary" type="submit">SUBMIT</button>
+        </md-card-actions>
+    </md-card>
+</form>
