@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'sample-app',
+  selector: 'app',
   template: `
       <!-- use the custom element! -->
       <custom-element [username]="username" (selected)="onSelected($event)"></custom-element>

@@ -1,9 +1,6 @@
-import {Directive, provide, forwardRef} from '@angular/core';
+import {Directive, forwardRef} from '@angular/core';
 import {FormControl, NG_VALIDATORS} from '@angular/forms';
-
-import {EmailBlacklistService} from './email-blacklist.service';
-import {ValidatorFn} from "@angular/common/src/forms-deprecated/directives/validators";
-import {AbstractControl} from "@angular/forms";
+import {EmailBlacklistService} from "./email-blacklist.service";
 
 let EMAIL_REGEXP = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -32,9 +29,9 @@ export class EmailValidator {
 
 //
 // // Advanced - when validator HAS dependencies:
-// export function validateEmailFactory(emailBlacklistService:EmailBlacklistService) {
-// 	return function validateEmail(c:FormControl) {
-// 		var res:any = {};
+// export function validateEmailFactory(emailBlacklistService: EmailBlacklistService) {
+// 	return function validateEmail(c: FormControl) {
+// 		var res: any = {};
 // 		if (!c.value) return res;
 // 		if (!emailBlacklistService.check(c.value)) {
 // 			res.blacklist = {valid: false}
@@ -47,25 +44,25 @@ export class EmailValidator {
 // 	}
 // }
 // @Directive({
-// 	selector : '[validateEmail][formControl],[validateEmail][ngModel],[validateEmail][formControlName]',
+// 	selector: '[validateEmail][formControl],[validateEmail][ngModel],[validateEmail][formControlName]',
 // 	providers: [
 // 		EmailBlacklistService,
 // 		{
-// 			provide    : NG_VALIDATORS,
+// 			provide: NG_VALIDATORS,
 // 			useExisting: forwardRef(() => EmailValidator),
-// 			multi      : true
+// 			multi: true
 // 		}
 // 	]
 // })
 // export class EmailValidator {
 //
-// 	validator:Function;
+// 	validator: Function;
 //
-// 	constructor(emailBlacklistService:EmailBlacklistService) {
+// 	constructor(emailBlacklistService: EmailBlacklistService) {
 // 		this.validator = validateEmailFactory(emailBlacklistService);
 // 	}
 //
-// 	validate(c:FormControl) {
+// 	validate(c: FormControl) {
 // 		return this.validator(c);
 // 	}
 // }

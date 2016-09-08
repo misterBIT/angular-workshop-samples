@@ -1,7 +1,4 @@
 import {Component}     from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router';
-
-import {MonsterService}         from './monster.service';
 
 @Component({
   // Note how this component does not have a selector:
@@ -13,3 +10,4 @@ import {MonsterService}         from './monster.service';
   
 })
 export class MonsterCenterComponent { }
+ 

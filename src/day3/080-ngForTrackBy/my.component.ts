@@ -12,7 +12,7 @@ import {Directive, AfterContentInit, QueryList,ContentChildren} from '@angular/c
     selector: '[nodeLogger]',
     inputs: ['nodeLogger']
 })
-class NodeLoggerDirective {
+export class NodeLoggerDirective {
     nodeLogger;
     constructor() {}
     
@@ -34,7 +34,6 @@ class NodeLoggerDirective {
 
 @Component({
   selector: 'my-comp',
-  directives:[NodeLoggerDirective],
   template: `
       <p>
         <a (click)="shuffleCollections()">Shuffle collections</a>.

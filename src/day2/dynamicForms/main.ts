@@ -19,13 +19,15 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {DynamicFormComponent} from "./dynamic-form/dynamic-form.component";
+import {UserService} from "./user.service";
 
 
 @NgModule({
   imports: [ BrowserModule, ReactiveFormsModule],      
-  declarations: [ AppComponent, DynamicFormsExampleAppComponent, DynamicFormFieldComponent],   
+  declarations: [ AppComponent, DynamicFormsExampleAppComponent, DynamicFormComponent,DynamicFormFieldComponent],
   bootstrap: [ AppComponent ],     
-  providers: [ FormControlService ]                   
+  providers: [ FormControlService ,UserService]
 })
 export class AppModule { }
 

@@ -1,5 +1,4 @@
 import {Component} from '@angular/core'
-import {provideForms} from '@angular/forms'
 
 import {MonsterEditComponent} from './monster-edit.component';
 

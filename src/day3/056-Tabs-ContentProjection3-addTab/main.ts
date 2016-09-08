@@ -1,4 +1,3 @@
-import {bootstrap} from '@angular/platform-browser-dynamic'
 import {Component} from '@angular/core'
 
 import {TabsComponent} from './tabs.component';
@@ -49,7 +48,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [ BrowserModule ],      
-  declarations: [ AppComponent, TabsComponent, TabComponent],   
+  declarations: [ AppComponent, TabsComponent, TabComponent,SafePipe],
   bootstrap: [ AppComponent ],     
   providers: [ ]                   
 })

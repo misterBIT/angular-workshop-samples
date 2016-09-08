@@ -2,15 +2,14 @@ import {Component, Injectable} from '@angular/core';
 import {
 	FormGroup,
 	FormBuilder,
-	REACTIVE_FORM_DIRECTIVES,
 	Validators,
-	FormControl, AsyncValidatorFn
+	FormControl
 }    from '@angular/forms';
 
 @Injectable()
 class BarcodeAsyncValidator {
 	//may inject http, services ets...
-	validate(control:FormControl):Promise<{ [s:string]:boolean }> {
+	validate(control: FormControl): Promise<{ [s: string]: boolean }> {
 		return new Promise((resolve, reject) => { //may also return an observable
 			setTimeout(()=> {
 				resolve({invalidBarcode: !control.value.match(/^Puk/)});
@@ -21,8 +20,8 @@ class BarcodeAsyncValidator {
 
 // ************** Sample 4: Watching for changes **********************
 @Component({
-	selector  : 'product4',
-	template  : `
+	selector: 'product4',
+	template: `
     <div>  
         <h4>Watching for changes + Async validation</h4>  
         <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" >
@@ -42,14 +41,13 @@ class BarcodeAsyncValidator {
         </form>  
     </div>  
     `,
-	providers : [BarcodeAsyncValidator],
-	directives: [REACTIVE_FORM_DIRECTIVES]
+	providers: [BarcodeAsyncValidator]
 })
 export class Product4Component {
-	myForm:FormGroup;
+	myForm: FormGroup;
 	private productBarcode = '';
 
-	constructor(formBuilder:FormBuilder, barcodeValidateService:BarcodeAsyncValidator) {
+	constructor(formBuilder: FormBuilder, barcodeValidateService: BarcodeAsyncValidator) {
 		this.myForm = formBuilder.group({
 			'barcode': ['Puki123', [Validators.required], [barcodeValidateService.validate]]
 		});
@@ -58,13 +56,13 @@ export class Product4Component {
 
 
 		barcode.valueChanges.subscribe(
-			(value:string) => {
+			(value: string) => {
 				console.log('barcode changed to: ', value);
 			}
 		);
 
 		this.myForm.valueChanges.subscribe(
-			(value:string) => {
+			(value: string) => {
 				console.log('form changed to: ', this.myForm);
 			}
 		);

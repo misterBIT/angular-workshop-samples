@@ -1,31 +1,22 @@
-import { routing } from "./app.routes";
-import { AppComponent } from "./app.component";
-
-
-
-
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-
-
-
-import { CarService } from './car/car.service';
-import { DialogService } from './shared/dialog.service';
-import { MonsterService } from './monster/monster.service';
-import {AuthService  } from './shared/auth/auth.service';
-import {AuthGuard  } from './shared/auth/auth-guard.service';
-import {CanDeactivateGuard  } from './shared/can-deactivate-guard.service';
+import {routes} from "./app.routes";
+import {AppComponent} from "./app.component";
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {NgModule}      from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {HomeComponent} from "./home/home.component";
+import {LoginComponent} from "./login/login.component";
+import {SharedModule} from './shared/shared.module';
+import {MonstersModule} from './monster/monster.module';
+import {CarsModule} from "./car/car.module";
 
 
 @NgModule({
-  imports: [ BrowserModule, FormsModule, RouterModule, routing],      
-  declarations: [ AppComponent],   
-  bootstrap: [ AppComponent ],     
-  providers: [ MonsterService, CarService, DialogService, AuthService, AuthGuard, CanDeactivateGuard ]                   
+	imports: [SharedModule, MonstersModule, CarsModule, RouterModule.forRoot(routes)],
+	declarations: [AppComponent, HomeComponent, LoginComponent], //CarDetailComponent,CarListComponent
+	bootstrap: [AppComponent],
+	providers: []
 })
-export class AppModule { }
+export class AppModule {
+}
 
 platformBrowserDynamic().bootstrapModule(AppModule);

@@ -1,12 +1,11 @@
 import {
-  Component,
-  EventEmitter, Output
+	Component,
+	EventEmitter, Output
 } from '@angular/core';
 
 @Component({
-  selector: 'collapse',
-  properties: ['title'],
-  template: `
+	selector: 'collapse',
+	template: `
   <div>
     <h2 (click)="toggle()">
       {{ visible ? 'v' : '-->' }} {{title}}
@@ -21,14 +20,14 @@ import {
   `
 })
 export class CollapseComponent {
-    title: string;
-    visible = true;
-    @Output() open = new EventEmitter();
-    @Output() close = new EventEmitter();
-    
-    toggle() {
-     
-      this.visible = !this.visible;
-      (this.visible) ? this.open.emit('open') : this.close.emit('closed');
-    }
+	title: string;
+	visible = true;
+	@Output() open = new EventEmitter();
+	@Output() close = new EventEmitter();
+
+	toggle() {
+
+		this.visible = !this.visible;
+		(this.visible) ? this.open.emit('open') : this.close.emit('closed');
+	}
 }

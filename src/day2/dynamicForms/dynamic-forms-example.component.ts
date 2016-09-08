@@ -7,8 +7,6 @@ import {UserService}     from './user.service';
 	selector  : 'dynamic-forms-example-app',
 	template  : `<h1>  {{title}}	</h1>
 				<dynamic-form [fields]="fields" (send)="save($event);"></dynamic-form>`,
-	directives: [DynamicFormComponent],
-	providers : [UserService]
 })
 export class DynamicFormsExampleAppComponent {
 	title = 'dynamic-forms-example works!';
