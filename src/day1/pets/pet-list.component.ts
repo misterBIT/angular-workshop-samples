@@ -5,18 +5,18 @@ import {PetService} from './pet.service';
 	selector  : 'pet-list',
 	template  : `
         <h2>Pets</h2>
-         <letter-selector (select)="letter = $event"></letter-selector>
+         <pet-filter (update)="filterBy = $event"></pet-filter>   
+        
         <ul>
-            <li *ngFor="let currPet of petService.pets | search:letter "  >
-               <pet-render [pet]="currPet" (toggle)="petService.togglePet($event)"></pet-render>
+            <li *ngFor="let currPet of petService.pets | petSearch:filterBy "  >
+               <pet-render [petModel]="currPet" (toggle)="petService.togglePet($event)"></pet-render>
             </li>
         </ul>
     `
 
 })
-export class PetList {
-	@Input()
-	letter = '';
+export class PetListComponent {
+	filterBy = null;
 
 
 	constructor(private petService:PetService) {

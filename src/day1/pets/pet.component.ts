@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
-import {PetModel} from './pet.service';
+import {PetService} from './pet.service';
+import {PetModel} from './pet.model';
 
 @Component({
     selector: 'pet-render',
@@ -11,15 +12,15 @@ import {PetModel} from './pet.service';
             }
             img {max-width:200px}      
         </style>
-        <div [ngClass]="{awake: pet.awake}">
-            {{pet.name}}
-            <img [src]="'img/pet/'+pet.id+'.png'" />
-            <input type="checkbox" [checked]="pet.awake" (click)="toggle.emit(pet)" > Awake?
+        <div [ngClass]="{awake: petModel.awake}">
+            {{petModel.name}}
+            <img [src]="petModel.imgUrl" />
+            <input type="checkbox" [checked]="petModel.awake" (click)="toggle.emit(petModel)" > Awake?
         </div>
     `
 })
 export class PetComponent implements OnInit {
-    @Input() pet;
+    @Input() petModel : PetModel;
     @Output() toggle = new EventEmitter<PetModel>();
     constructor() { }
 
