@@ -1,7 +1,4 @@
 import {Component} from '@angular/core'
-
-import {PipesDemo} from './pipes-demo.component';
-
 @Component({
 	selector: 'app',
 	template: `
@@ -15,14 +12,21 @@ class AppComponent {
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+
+// import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+// import {HttpModule} from '@angular/http';
+
 import {DateDescPipe} from "./date-desc.pipe";
+import {AddCommasPipe} from "./add-commas.pipe";
+import {EllipsisPipe} from "./ellipsis.pipe";
+import {CapitalizePipe} from './capitalize.pipe';
+
+import {PipesDemo} from './pipes-demo.component';
 
 
 @NgModule({
-	imports: [BrowserModule, ReactiveFormsModule, HttpModule],
-	declarations: [AppComponent, PipesDemo, DateDescPipe],
+	imports: [BrowserModule],
+	declarations: [AppComponent, PipesDemo, DateDescPipe, CapitalizePipe, EllipsisPipe, AddCommasPipe],
 	bootstrap: [AppComponent],
 	providers: []
 })

@@ -6,10 +6,10 @@
 //import "./day1/010-counterInputOutput/main";
 //import "./day1/012-DisplayAndEvents/main";
 //import "./day1/020-BuiltinDirectives/main";
-//import "./day1/025-Pipes/main";
+import "./day1/025-Pipes/main";
 //import "./day1/070-Cars/main";
 // import './day1/pets/main';
-import './day1/pets-starter/main';
+// import './day1/pets-starter/main';
 
 /**********
  Day2
