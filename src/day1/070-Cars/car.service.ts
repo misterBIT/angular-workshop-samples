@@ -8,9 +8,9 @@ import {Car, CarsCollection} from './car'
 
 // @Injectable()
 export class CarService {
-	constructor(@Optional() private logger:Logger,
+	constructor(@Optional() private logger: Logger,
 	            @Inject(CarsCollection) private carsCollection,
-	            @Inject('app.config') private config:Config) {
+	            @Inject('app.config') private config: Config) {
 		console.log(config);
 	}
 

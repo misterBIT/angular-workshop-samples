@@ -1,5 +1,6 @@
 import {Component, Input, Output, EventEmitter}  from '@angular/core';
 import {Car} from './car';
+import {TestSvc} from "./common/test.service";
 //import {CONFIG} from '../common/app-config';
 
 @Component({
@@ -18,7 +19,7 @@ export class CarComponent {
 	@Input() car: Car;
 	@Output('deleted') whenCarDeleted = new EventEmitter<Car>();
 
-	constructor() {
+	constructor(test: TestSvc) {
 	}
 
 	deleteCar() {
