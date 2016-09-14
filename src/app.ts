@@ -2,9 +2,9 @@
  Day1
  *********/
 
-//import "./day1/000-Tries/main";
-//import "./day1/010-counterInputOutput/main";
-//import "./day1/012-DisplayAndEvents/main";
+// import "./day1/000-Tries/main";
+// import "./day1/010-counterInputOutput/main";
+import "./day1/012-DisplayAndEvents/main";
 //import "./day1/020-BuiltinDirectives/main";
 //import "./day1/025-Pipes/main";
 //import "./day1/070-Cars/main";
@@ -35,7 +35,7 @@
  //import "./day3/016-refToContentChildren/main";
  //import "./day3/017-coloring/main";
  //import "./day3/050-Collapse-ContentProjection/main";
- import "./day3/055-Tabs-ContentProjection/main";
+ // import "./day3/055-Tabs-ContentProjection/main";
  //import "./day3/056-Tabs-ContentProjection2/main";
 //import "./day3/056-Tabs-ContentProjection3-addTab/main";
 //import "./day3/080-ngForTrackBy/main";
