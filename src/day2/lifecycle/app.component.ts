@@ -15,16 +15,16 @@ import {ItemsService} from './cart/cart.service'
  */
 
 @Component({
-	selector  : 'app',
-	template  : `
- <peek-a-boo-parent></peek-a-boo-parent>
+	selector: 'app',
+	template: `
+ 	<peek-a-boo-parent></peek-a-boo-parent>
     <cart-badge [itemStream]="itemsService.items$"></cart-badge>
     <button (click)="addItem()" >Add Item</button>
   `,
 
 })
 export class AppComponent {
-	constructor(private itemsService:ItemsService) {
+	constructor(private itemsService: ItemsService) {
 
 	}
 

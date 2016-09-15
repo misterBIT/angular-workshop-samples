@@ -8,10 +8,11 @@ import {LoginComponent} from "./login/login.component";
 import {SharedModule} from './shared/shared.module';
 import {MonstersModule} from './monster/monster.module';
 import {CarsModule} from "./car/car.module";
+import {HttpModule} from "@angular/http";
 
 
 @NgModule({
-	imports: [SharedModule, MonstersModule, CarsModule, RouterModule.forRoot(routes)],
+	imports: [SharedModule, MonstersModule, CarsModule, RouterModule.forRoot(routes), HttpModule],
 	declarations: [AppComponent, HomeComponent, LoginComponent], //CarDetailComponent,CarListComponent
 	bootstrap: [AppComponent],
 	providers: []
