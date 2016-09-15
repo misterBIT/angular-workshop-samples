@@ -33,7 +33,7 @@ export class CarsComponent {
 	cars;
 
 	constructor(private carService:CarService, @Inject(myToken) demo) {
-		console.log(demo);
+		//console.log(demo);
 		this.cars = this.carService.query();
 	}
 
