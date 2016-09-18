@@ -1,5 +1,6 @@
 import {Component, ViewEncapsulation} from '@angular/core'
 
+import {FaderComponent} from './fader.component';
 import {DemoSceneComponent} from './demo-scene.component';
 
 @Component({
@@ -7,21 +8,24 @@ import {DemoSceneComponent} from './demo-scene.component';
     styleUrls: ['style.css'],
     encapsulation: ViewEncapsulation.None,
     template: `
-    <demo-scene></demo-scene>
+    <button (click)="showFader = !showFader"> Toggle Fading </button>
+    <fader [isVisible]="showFader">
+      Am I visible ?
+      <demo-scene></demo-scene>
+    </fader>
     `
 })
-class AppComponent {}
+class AppComponent {
+  showFader = false;
+}
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
 
 @NgModule({
   imports: [ BrowserModule],      
-  declarations: [ AppComponent, DemoSceneComponent],   
+  declarations: [ AppComponent, FaderComponent, DemoSceneComponent],   
   bootstrap: [ AppComponent ],     
   providers: [ ]                   
 })

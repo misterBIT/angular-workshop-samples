@@ -1,0 +1,21 @@
+body {
+    text-align: center
+}
+section {overflow: hidden; background-color: lightgreen;}
+
+article {
+    background-color: lightblue;
+    padding:10px;
+}
+article img {
+    display: block;
+    margin: auto;
+}
+
+h3{
+    transition: all .5s;
+}
+h3:hover {
+    color: gold;
+    transform: scale(1.3);
+}

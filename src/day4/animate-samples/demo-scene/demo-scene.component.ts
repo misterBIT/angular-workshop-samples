@@ -83,7 +83,11 @@ import {NgStyle} from '@angular/common';
         ]))
       ]),
 
-      // transition('end => start', [animate(500)])
+      // transition('end => *', [animate(2000)]),
+      transition('end => *', [
+        style({ transform: 'translate3d(-100%, 0, 0)' }),
+        animate('350ms ease-out')
+      ])
     ])
   ]
 })
@@ -101,21 +105,9 @@ export class DemoSceneComponent {
   constructor(private _ref: ViewContainerRef) {
     this.setStartState();
     this._listeners.push(() => {
-      alert('Animation Done');
+      console.log('Animation Done');
     });
   }
-
-
-
-  animateScene() {
-    if (this.skyState === 'end') {
-      this.setStartState();
-    } else {
-      this.setEndState();
-    }
-  }
-
-
 
 setStartState() {
   this.skyState      = 'skyStart';

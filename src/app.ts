@@ -20,7 +20,7 @@
 //import "./day2/042-FormsCustomValidations/main";
 //import "./day2/043-FormsAsynchValidator/main";
 //import "./day2/dynamicForms/main.ts";
-import "./day2/routing-monsters/main.ts";
+// import "./day2/routing-monsters/main.ts";
 // import "./day2/forms-live-coding/main.ts";
 //import "./day2/custom-form-controls/main";
 //import "./day2/FormValidationsSignup-PassRetypeChallange/main";
@@ -44,3 +44,9 @@ import "./day2/routing-monsters/main.ts";
  Day4
  *********/
 //import "./day4/CustomElementInterop/main";
+// NOTHING YET import "./day4/carsAndMonsters/main";
+import "./day4/animate-samples/demo1/main";
+// import "./day4/animate-samples/demo-states/main";
+// import "./day4/animate-samples/demo-scene/main";
+
+
