@@ -1,0 +1,19 @@
+$badass: #bada55;
+
+
+body {
+  background: lightblue;
+}
+
+.container {
+  margin-top: 50px;
+  // background-color: $badass;
+}
+
+input.ng-invalid.ng-touched {
+  background-color: $badass;
+}
+
+input.ng-valid.ng-touched {
+  border: 2px solid green;
+}

@@ -1,0 +1,24 @@
+$bgColor : #e6eef1;
+
+li {
+  list-style: none;
+  display:inline-block;
+  padding:1em;
+  margin:1em;
+  /*border: 1px solid gray;*/
+  background-color:$bgColor;
+  border-radius: 0.2em;
+  text-align: center;
+}
+
+.monster-thumb {
+  font-size: 2em;
+
+}
+
+
+// .imgMonster {
+//   max-width: 100px;
+// }
+
+

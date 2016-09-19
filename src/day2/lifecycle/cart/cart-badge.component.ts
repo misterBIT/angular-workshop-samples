@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
-import {Observable}     from 'rxjs/Observable';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
 	selector       : 'cart-badge',

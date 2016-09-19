@@ -1,4 +1,4 @@
-<form #f="ngForm" [formGroup]="myForm" novalidate (ngSubmit)="submitForm(f)">
+<form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit()">
     <md-card>
         <md-card-title>Registration Form</md-card-title>
         <md-card-content>
@@ -11,7 +11,7 @@
                 Name is required
             </div>
             <div formArrayName="address" Name="address">
-                <div *ngFor="let
+                <div *ngFor="let address of addresses.controls; let i = index;" [formGroupName]="i">
                     <p>Address</p>
                     <md-input formControlName="street" placeholder="Street"></md-input>
                     <div class="flex align-center">
@@ -21,26 +21,25 @@
                             <option value="CA">CA</option>
                             <option value="NY">NY</option>
                         </select>
-                        <md-input formControlName="zip" placeholder="zip" type="number"></md-input>
+                        <md-input formControlName='zip' placeholder="zip" type="number"></md-input>
+                    </div>
                 </div>
                 <button md-button (click)="addAddress()">ADD ADDRESS</button>
             </div>
             <p>Would you like a newsletter?</p>
             <label for="yes">
-                <input formControlName="newsletter" type="radio" [value]="true" id="yes">
+                <input [value]="true" formControlName="newsletter" type="radio" id="yes">
                 Yes
             </label>
             <label for="no">
-                <input formControlName="newsletter" type="radio" [value]="false" id="no">
+                <input [value]="false" formControlName="newsletter" type="radio" id="no">
                 No
             </label>
-            <input formControlName="human" type="checkbox"> I am not a robot
+            <input type="checkbox" formControlName="human"> I am not a robot
         </md-card-content>
         <md-card-actions align="end">
             <button md-button color="primary" type="submit">SUBMIT</button>
         </md-card-actions>
     </md-card>
 </form>
-<pre>
-{{myForm.value|json}}
-</pre>
+<pre>{{myForm.value|json}}</pre>

@@ -1,0 +1,43 @@
+<form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <md-card>
+        <md-card-title>Registration Form</md-card-title>
+        <md-card-content>
+            <div class="flex">
+                <md-input [ngModel]="user.firstName" name="firstName" placeholder="First name"></md-input>
+                <md-input [ngModel]="user.lastName" name="lastName" placeholder="Last name"></md-input>
+            </div>
+            <md-input [(ngModel)]="user.username" #userInput="ngModel" name="username" required minlength="5" placeholder="Username"></md-input>
+            <span [hidden]="userInput.valid || userInput.pristine">Username must be longer than 5 letters</span>
+            <div ngModelGroup="address">
+                <p>Address</p>
+                <md-input [ngModel]="street" name="street" placeholder="Street" required></md-input>
+                <div class="flex align-center">
+                    <md-input ngModel name="city" placeholder="City"></md-input>
+                    <select ngModel name="state">
+                        <option value="" disabled>Select a state</option>
+                        <option value="CA">CA</option>
+                        <option value="NY">NY</option>
+                    </select>
+                    <md-input ngModel pattern="" name="zip" placeholder="zip" type="number"></md-input>
+                </div>
+            </div>
+            <p>Would you like a newsletter?</p>
+            <label for="yes">
+                <input type="radio" value="true" id="yes" ngModel name="newsletter">
+                Yes
+            </label>
+            <label for="no">
+                <input type="radio" id="no" value="false" ngModel name="newsletter">
+                No
+            </label>
+            <input type="checkbox" ngModel name="human"> I am not a robot
+        </md-card-content>
+        <md-card-actions align="end">
+            <button md-button color="primary" type="submit">SUBMIT</button>
+        </md-card-actions>
+    </md-card>
+</form>
+<pre>
+    current value of user : {{user|json}}
+    {{f.value|json}}
+</pre>

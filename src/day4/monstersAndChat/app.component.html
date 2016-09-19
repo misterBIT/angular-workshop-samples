@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <span class="navbar-brand">
+        <a routerLink="/home" routerActive="active">Home</a> 
+    </span>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="monster" routerActive="active">Meet the Monsters</a></li>
+      <li><a routerLink="monster/edit" routerActive="active">New Monster</a></li>
+      <li><a [routerLink]="[{outlets: {primary: 'home', aux: 'chat'}}]">Open Chat</a></li> 
+      <li><a [routerLink]="[{outlets: {aux: null}}]">Close Chat</a></li>
+
+    </ul>
+  </div>
+</nav>
+
+<section class="container">
+  <router-outlet></router-outlet>
+  <router-outlet name="aux"></router-outlet>
+</section>
+
+<div class="navbar navbar-fixed-bottom text-center">
+  <a href="https://github.com/misterBIT/angular2-workshop-seed">Angular 2 Seed</a> by misterBIT
+</div>
