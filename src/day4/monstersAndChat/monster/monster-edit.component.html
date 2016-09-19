@@ -1,0 +1,22 @@
+<h1> 
+  <span *ngIf="monsterToEdit.id">Edit</span>
+  <span *ngIf="!monsterToEdit.id">New</span>
+  Monster
+</h1>
+<form [formGroup]="frmMonster" (submit)="save()" >
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text" class="form-control" [formControl]="frmMonster.controls['name']" autofocus>
+    <p class="text-danger" *ngIf="frmMonster.controls.name.dirty && frmMonster.controls.name.errors?.required">Monster has no name</p>
+    <p class="text-danger" *ngIf="frmMonster.controls.name.dirty && frmMonster.controls.name.errors?.minlength">Monster's name too short</p>
+    <p class="text-danger" *ngIf="frmMonster.controls.name.dirty && frmMonster.controls.name.errors?.maxlength">Monster's name too long</p>
+  </div>
+
+  <div class="form-group">
+    <label>Power:</label>
+    <input type="number" class="form-control" [formControl]="frmMonster.controls['power']">
+    <p class="text-danger" *ngIf="frmMonster.controls.power.dirty && frmMonster.controls.power?.errors">Monster needs Power</p>
+  </div>
+    <input type="file" ng2FileSelect [uploader]="uploader"  *ngIf="!monsterToEdit.id" />
+  <button type="submit" [disabled]="!frmMonster.valid" class="btn btn-default">Submit</button>
+</form>

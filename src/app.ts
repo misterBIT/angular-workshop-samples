@@ -43,8 +43,8 @@ import "./day2/lifecycle/main.ts";
  Day4
  *********/
 //import "./day4/CustomElementInterop/main";
-// NOTHING YET import "./day4/carsAndMonsters/main";
-import "./day4/animate-samples/demo1/main";
+import "./day4/monstersAndChat/main";
+// import "./day4/animate-samples/demo1/main";
 // import "./day4/animate-samples/demo-states/main";
 // import "./day4/animate-samples/demo-scene/main";
 
