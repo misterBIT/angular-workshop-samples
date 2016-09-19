@@ -1,6 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core'
 
 import {Demo1Component} from './demo1.component';
+import {DialogComponent} from './dialog/dialog.component';
 
 @Component({
     selector: 'app',
@@ -19,7 +20,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [ BrowserModule],      
-  declarations: [ AppComponent, Demo1Component],   
+  declarations: [ AppComponent, Demo1Component, DialogComponent],   
   bootstrap: [ AppComponent ],     
   providers: [ ]                   
 })

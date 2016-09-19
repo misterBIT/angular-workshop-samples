@@ -19,6 +19,14 @@ import {NgStyle} from '@angular/common';
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero debitis repellendus beatae error ducimus suscipit reiciendis omnis iusto magnam voluptatum soluta nam quos, ea nihil eaque assumenda iste dolorum eum!
       </article>
 
+      <hr />
+      <button (click)="showDialog = !showDialog" class="btn">Open Dialog</button>
+
+      <app-dialog [(visible)]="showDialog">
+        <h1>Hello Animations!</h1>
+        <button (click)="showDialog = !showDialog" class="btn">Close</button>
+      </app-dialog>
+
     `,
 
     animations: [
