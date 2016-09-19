@@ -14,8 +14,11 @@
 /**********
  Day2
  *********/
-import "./day2/lifecycle/main.ts";
+// import "./day2/lifecycle/main";
 //import "./day2/040-MonsterForm/main";
+// import "./day2/forms-live-coding/main.ts";
+// import "./day2/forms-live-coding-template-driven/main.ts";
+import './day2/forms-live-coding-model-driven/main.ts';
 // import "./day2/forms-live-coding/main.ts";
 //import "./day2/041-ProductForms/main";
 //import "./day2/042-FormsCustomValidations/main";
@@ -43,7 +46,7 @@ import "./day2/lifecycle/main.ts";
  Day4
  *********/
 //import "./day4/CustomElementInterop/main";
-import "./day4/monstersAndChat/main";
+// import "./day4/monstersAndChat/main";
 // import "./day4/animate-samples/demo1/main";
 // import "./day4/animate-samples/demo-states/main";
 // import "./day4/animate-samples/demo-scene/main";

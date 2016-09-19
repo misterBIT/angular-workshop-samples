@@ -1,0 +1,45 @@
+<form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit()">
+    <md-card>
+        <md-card-title>Registration Form</md-card-title>
+        <md-card-content>
+            <div class="flex">
+                <md-input formControlName="firstName" placeholder="First name"></md-input>
+                <md-input formControlName="lastName" placeholder="Last name"></md-input>
+            </div>
+            <md-input formControlName="username" placeholder="Username"></md-input>
+            <div [hidden]="myForm.get('username').valid || myForm.get('username').pristine" class="alert alert-danger">
+                Name is required
+            </div>
+            <div formArrayName="address" Name="address">
+                <div *ngFor="let address of addresses.controls; let i = index;" [formGroupName]="i">
+                    <p>Address</p>
+                    <md-input formControlName="street" placeholder="Street"></md-input>
+                    <div class="flex align-center">
+                        <md-input formControlName="city" placeholder="City"></md-input>
+                        <select formControlName="state">
+                            <option value="" disabled>Select a state</option>
+                            <option value="CA">CA</option>
+                            <option value="NY">NY</option>
+                        </select>
+                        <md-input formControlName='zip' placeholder="zip" type="number"></md-input>
+                    </div>
+                </div>
+                <button md-button (click)="addAddress()">ADD ADDRESS</button>
+            </div>
+            <p>Would you like a newsletter?</p>
+            <label for="yes">
+                <input [value]="true" formControlName="newsletter" type="radio" id="yes">
+                Yes
+            </label>
+            <label for="no">
+                <input [value]="false" formControlName="newsletter" type="radio" id="no">
+                No
+            </label>
+            <input type="checkbox" formControlName="human"> I am not a robot
+        </md-card-content>
+        <md-card-actions align="end">
+            <button md-button color="primary" type="submit">SUBMIT</button>
+        </md-card-actions>
+    </md-card>
+</form>
+<pre>{{myForm.value|json}}</pre>
