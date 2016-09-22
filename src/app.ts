@@ -18,7 +18,7 @@
 //import "./day2/040-MonsterForm/main";
 // import "./day2/forms-live-coding/main.ts";
 // import "./day2/forms-live-coding-template-driven/main.ts";
-import './day2/forms-live-coding-model-driven/main.ts';
+// import './day2/forms-live-coding-model-driven/main.ts';
 // import "./day2/forms-live-coding/main.ts";
 //import "./day2/041-ProductForms/main";
 //import "./day2/042-FormsCustomValidations/main";
@@ -41,6 +41,8 @@ import './day2/forms-live-coding-model-driven/main.ts';
 // import "./day3/056-Tabs-ContentProjection2/main";
 //import "./day3/056-Tabs-ContentProjection3-addTab/main";
 //import "./day3/080-ngForTrackBy/main";
+//import "./day3/modal-component/main";
+import "./day3/rxjs/wikipediaSearch/main.ts"
 
 /**********
  Day4
