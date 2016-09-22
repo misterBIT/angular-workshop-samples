@@ -1,12 +1,12 @@
-$bgColor : #e6eef1;
+$bgColor: #e6eef1;
 
 li {
   list-style: none;
-  display:inline-block;
-  padding:1em;
-  margin:1em;
+  display: inline-block;
+  padding: 1em;
+  margin: 1em;
   /*border: 1px solid gray;*/
-  background-color:$bgColor;
+  background-color: $bgColor;
   border-radius: 0.2em;
   text-align: center;
 }
@@ -16,9 +16,8 @@ li {
 
 }
 
-
-// .imgMonster {
-//   max-width: 100px;
-// }
+.imgMonster {
+  max-width: 100px;
+}
 
 

@@ -10,9 +10,9 @@ export class MonstersFilterByPipe implements PipeTransform {
     if (!list) {return [];}
     if (!filter) {return list;}
     return list.filter(item=>{
-      return item.name.toLowerCase()
-              .indexOf(filter.byName.toLowerCase()) !== -1 &&
-             (!filter.byPower || item.power === filter.byPower);
+      return (filter.byName.length === 0 || item.name.toLowerCase()
+              .indexOf(filter.byName.toLowerCase()) !== -1) &&
+             (!filter.byPower || +item.power === +filter.byPower);
     });
   }
 }

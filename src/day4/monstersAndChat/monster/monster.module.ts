@@ -6,7 +6,7 @@ import {MonsterComponent} from "./monster.component";
 import {MonsterThumbComponent} from "./monster-thumb.component";
 import {MonsterService} from "./monster.service";
 import {MonsterResolver} from "./monster.resolver";
-import {MonstersFilterByPipe} from "./monsters.pipe";
+import {MonstersFilterByPipe} from "./monsters-filterBy.pipe";
 import {routes} from "./monster.routes";
 import {RouterModule} from "@angular/router";
 import {SharedModule} from "../shared/shared.module";
