@@ -23,7 +23,7 @@
               <div class="form-group col-xs-6">
                 <label>street</label>
                 <input type="text" class="form-control" formControlName="street">
-                <small [hidden]="myForm.controls.addresses.controls[i].controls.street.valid" class="text-danger">
+                <small [hidden]="myForm.controls.addresses.get(i).controls.street.valid" class="text-danger">
                     Street is required
                 </small>
               </div>

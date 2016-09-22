@@ -19,7 +19,11 @@ export class MonsterEditComponent implements OnInit {
 	            private route: ActivatedRoute,
 	            private router: Router,
 	            private monsterService: MonsterService) {
-		this.uploader = new FileUploader({url: monsterService.url});
+
+	}
+
+	ngOnInit() {
+		this.uploader = new FileUploader({url: this.monsterService.url});
 		this.monsterToEdit = this.route.snapshot.data['monster'] || new MonsterModel({power: 3});
 		this.frmMonster = this.formBuilder.group({
 			name: [this.monsterToEdit.name,
@@ -29,10 +33,6 @@ export class MonsterEditComponent implements OnInit {
 			power: [this.monsterToEdit.power, Validators.required],
 			imgUrl: [this.monsterToEdit.imgUrl]
 		});
-	}
-
-	ngOnInit() {
-		this.frmMonster.reset();
 	}
 
 	save() {

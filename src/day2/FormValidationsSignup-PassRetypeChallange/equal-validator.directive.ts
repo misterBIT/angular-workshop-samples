@@ -18,27 +18,27 @@ export class EqualValidator implements Validator {
 
 	validate(c:AbstractControl):{ [key:string]:any } {
 		// self value
-		let v = c.value;
+		let selfValue = c.value;
 
-		// control vlaue
-		let e = c.root['controls'][this.validateEqual];
+		// control value
+		let controlValue = c.root.get(this.validateEqual);
 
 		// value not equal
-		if (e && v !== e.value && !this.isReverse) return {
+		if (controlValue && selfValue !== controlValue.value && !this.isReverse) return {
 			validateEqual: false
-		}
+		};
 
 		// value equal and reverse
-		if (e && v === e.value && this.isReverse) {
-			delete e.errors['validateEqual'];
-			if (!Object.keys(e.errors).length) e.setErrors(null);
+		if (controlValue && selfValue === controlValue.value && this.isReverse) {
+			delete controlValue.errors['validateEqual'];
+			if (!Object.keys(controlValue.errors).length) controlValue.setErrors(null);
 		}
 
 		// value not equal and reverse
-		if (e && v !== e.value && this.isReverse) {
-			e.setErrors({
+		if (controlValue && selfValue !== controlValue.value && this.isReverse) {
+			controlValue.setErrors({
 				validateEqual: false
-			})
+			});
 		}
 
 		return null;

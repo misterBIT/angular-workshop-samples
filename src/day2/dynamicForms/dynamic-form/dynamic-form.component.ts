@@ -104,7 +104,7 @@ export class DynamicFormFieldComponent {
 	@Input() form: FormGroup;
 
 	get isValid() {
-		return this.form.controls[this.field.key].valid;
+		return this.form.get(this.field.key).valid;
 	}
 }
 

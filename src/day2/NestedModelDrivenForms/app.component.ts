@@ -30,12 +30,12 @@ export class AppComponent implements OnInit {
 	}
 
 	addAddress() {
-		const control = <FormArray>this.myForm.controls['addresses'];
+		const control = <FormArray>this.myForm.get('addresses');
 		control.push(this.initAddress());
 	}
 
 	removeAddress(i: number) {
-		const control = <FormArray>this.myForm.controls['addresses'];
+		const control = <FormArray>this.myForm.get('addresses');
 		control.removeAt(i);
 	}
 

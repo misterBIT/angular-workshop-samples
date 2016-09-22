@@ -52,7 +52,7 @@ export class Product4Component {
 			'barcode': ['Puki123', [Validators.required], [barcodeValidateService.validate]]
 		});
 
-		let barcode = this.myForm.controls['barcode'];
+		let barcode = this.myForm.get('barcode');
 
 
 		barcode.valueChanges.subscribe(

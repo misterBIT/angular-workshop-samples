@@ -25,8 +25,8 @@ import {
                             formControlName="barcode">
                 </label>
                 
-                <div *ngIf="myForm.controls.barcode.touched && myForm.controls.barcode.invalid"  class="alert alert-danger">Barcode is invalid!</div>
-                <div *ngIf="myForm.controls.barcode.hasError('required')" class="alert alert-danger">Barcode is Required!</div>
+                <div *ngIf="myForm.get('barcode').touched && myForm.get('barcode').invalid"  class="alert alert-danger">Barcode is invalid!</div>
+                <div *ngIf="myForm.get('barcode').hasError('required')" class="alert alert-danger">Barcode is Required!</div>
                 <div *ngIf="myForm.hasError('required', 'barcode')" class="alert alert-danger">Barcode is Required!!</div>
                 <div *ngIf="myForm.hasError('maxlength','barcode')" class="alert alert-danger">Barcode is Too Long!</div>
                 <div *ngIf="myForm.hasError('minlength','barcode')" class="alert alert-danger">Barcode is Too Short</div>
@@ -57,7 +57,7 @@ export class Product2Component {
 		// 	//    'barcode': ['Puki123', Validators.required]
 		// 	'barcode': ['Puki123', Validators.compose([Validators.required, Validators.maxLength(10)])]
 		// });
-		// this.barcode = this.myForm.controls['barcode'];
+		// this.barcode = this.myForm.get('barcode');
 
 	}
 

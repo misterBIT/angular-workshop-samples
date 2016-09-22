@@ -11,8 +11,8 @@ import {EmailBlacklistService} from "./email-blacklist.service";
             Email: <input type="email" formControlName="email" required validateEmail /> 
             `// validators can be used by template or by model
 	+ `
-            <div class="alert alert-warning" *ngIf="myForm.controls['email'].hasError('validateEmail')" >Mail is Invalid</div>
-            <div class="alert alert-danger" *ngIf="myForm.controls['email'].hasError('blacklist')" >Wait Here</div>
+            <div class="alert alert-warning" *ngIf="myForm.get('email').hasError('validateEmail')" >Mail is Invalid</div>
+            <div class="alert alert-danger" *ngIf="myForm.get('email').hasError('blacklist')" >Wait Here</div>
             
             <input type="submit" />
         </form>
