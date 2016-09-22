@@ -41,8 +41,9 @@
 // import "./day3/056-Tabs-ContentProjection2/main";
 //import "./day3/056-Tabs-ContentProjection3-addTab/main";
 //import "./day3/080-ngForTrackBy/main";
+import "./day3/081-InjectingPipe/main";
 //import "./day3/modal-component/main";
-import "./day3/rxjs/wikipediaSearch/main.ts"
+// import "./day3/rxjs/wikipediaSearch/main.ts"
 
 /**********
  Day4
