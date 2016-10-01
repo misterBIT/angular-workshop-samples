@@ -32,21 +32,21 @@
 /**********
  Day3
  *********/
-// import "./day3/010-SimpleCustomDirective/main";
-//import "./day3/015-refToChildElement/main";
-//import "./day3/016-refToContentChildren/main";
-// import "./day3/017-coloring/main";
-//import "./day3/050-Collapse-ContentProjection/main";
+// import "./day3/010-CustomDirectives/main";
+// import "./day3/015-refToViewChildren/main";
+// import "./day3/016-refToContentChildren/main";
+// import "./day3/050-Collapse-ContentProjection/main";
 // import "./day3/055-Tabs-ContentProjection/main";
 // import "./day3/056-Tabs-ContentProjection2/main";
 // import "./day3/056-Tabs-ContentProjection3-addTab/main";
-//import "./day3/080-ngForTrackBy/main";
+// import "./day3/080-ngForTrackBy/main";
+import "./day3/modal-component/main";
 
 /**********
  Day4
  *********/
 //import "./day4/CustomElementInterop/main";
-import './day4/monstersAndChat/main';
+// import './day4/monstersAndChat/main';
 // import "./day4/animate-samples/demo1/main";
 // import "./day4/animate-samples/demo-states/main";
 // import "./day4/animate-samples/demo-scene/main";

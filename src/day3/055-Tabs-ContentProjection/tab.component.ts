@@ -16,7 +16,7 @@ export class TabComponent {
 	active;
 
 	constructor(tabs:TabsComponent,@Optional() test:Test) {
-		console.log(test);
+		console.log('Tab requested TestService and got:', test);
 		tabs.addTab(this);
 	}
 

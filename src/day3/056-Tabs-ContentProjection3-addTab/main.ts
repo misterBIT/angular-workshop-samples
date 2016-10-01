@@ -3,6 +3,8 @@ import {Component} from '@angular/core'
 import {TabsComponent} from './tabs.component';
 import {TabComponent} from './tab.component';
 import {SafePipe} from "./safe.pipe";
+
+
 interface TabDesc {
 	title:string;
 	content:string
@@ -14,7 +16,7 @@ interface TabDesc {
         <button (click)="addTab()">Add tab</button>
         <tabs>
             <tab  *ngFor="let tab of tabs" [tabTitle]="tab.title">
-            	<div [innerHTML]='tab.content'></div>
+            	<div [innerHTML]="tab.content"></div>
             </tab>
         </tabs>
     `,
@@ -34,7 +36,7 @@ class AppComponent {
 	];
 
 	addTab() {
-		this.tabs.push({title: 'tabs3', content: `<p>tab3 content-</p>`});
+		this.tabs.push({title: 'tabs3', content: `<p>tab3 content!</p>`});
 	}
 
 }

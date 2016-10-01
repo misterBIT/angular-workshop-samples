@@ -21,7 +21,7 @@ export class MyComp implements AfterContentInit {
 }
 
 
-/* BETTER OPTION? */
+/* ANOTHER OPTION? */
 @Directive({ selector: 'li' })
 export class ListItem {
   constructor(public el: ElementRef){}

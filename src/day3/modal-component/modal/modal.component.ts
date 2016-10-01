@@ -51,8 +51,8 @@ export class ModalCompoonent implements OnInit,OnDestroy {
 	constructor(private cd: ChangeDetectorRef) {
 	}
 
-	stopPropagation($evnt) {
-		$evnt.stopPropagation();
+	stopPropagation($event) {
+		$event.stopPropagation();
 		return false;
 
 	}
@@ -64,7 +64,7 @@ export class ModalCompoonent implements OnInit,OnDestroy {
 	ngOnInit() {
 		this.subscription = this.modalObs.subscribe((modalDef: IModalDefinition)=> {
 			this.data = modalDef;
-			this.cd.detectChanges();
+			// this.cd.detectChanges();
 		});
 	}
 

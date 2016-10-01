@@ -1,16 +1,17 @@
 import {
 	Component,
-	EventEmitter, Output
+	EventEmitter, Output, Input
 } from '@angular/core';
 
 @Component({
 	selector: 'collapse',
 	template: `
   <div>
-    <h2 (click)="toggle()">
-      {{ visible ? 'v' : '-->' }} {{title}}
-    </h2>
-    <div [hidden]="!visible">
+    <h3 (click)="toggle()">
+			{{title}}
+      {{ visible ? 'x' : 'v' }} 
+    </h3>
+    <div [hidden]="!visible" class="well">
       <div style="background:yellow">
           <ng-content select="h1"></ng-content>
       </div>
@@ -20,8 +21,9 @@ import {
   `
 })
 export class CollapseComponent {
-	title: string;
-	visible = true;
+	
+	visible = false;
+	@Input() title;
 	@Output() open = new EventEmitter();
 	@Output() close = new EventEmitter();
 
