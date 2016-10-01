@@ -4,8 +4,11 @@ import {HighlightDirective} from './highlight.directive';
 
 @Component({
     selector: 'app',
+    styles: [`.other {text-transform: uppercase}`],
     template: `
-        <p myHighlight>Me? Just a silly Custom Directive</p>
+    <section>
+        <div class="well" myHighlight>Me? Just a silly Custom Directive</div>
+    </section>    
     `
 })
 class AppComponent {}
