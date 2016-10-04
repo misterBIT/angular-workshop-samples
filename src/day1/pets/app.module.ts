@@ -4,15 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 // === App ===
-import { LetterSelectorComponent }  from './pet/letter-selector.component';
+import { LetterSelectorComponent }  from './shared/letter-selector.component';
 import { AppComponent }  from './app.component';
 import { PetInputComponent }  from './pet/pet-input.component';
 import { PetListComponent }  from './pet/pet-list.component';
 import { PetComponent }  from './pet/pet.component';
 import { PetSearchPipe }  from './pet/pet-search.pipe';
 import { PetService }  from './pet/pet.service';
-import { TimeComponent } from './time/time.component';
-import { CountdownComponent } from './time/countdown.component'
+import { TimeComponent } from './shared/time/time.component';
+import { CountdownComponent } from './shared/time/countdown.component'
 
 @NgModule({
   imports: [ BrowserModule, FormsModule ],

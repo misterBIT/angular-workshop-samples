@@ -7,7 +7,7 @@ export class PetModel {
   lastFed: number;
 
   static maxId: number = 0;
-  private static feedingLastForMillis = 60000;
+  private static feedingLastForMillis = 10000;
 
   // == Methods ==
 

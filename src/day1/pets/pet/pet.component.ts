@@ -6,12 +6,12 @@ import {PetModel} from './pet.model';
   selector: 'pet',
   template: `
     <style>
-        img {max-width:200px;}
-        .awake {color:gold}
+        img {max-height:200px;}
+        .awake {color:darkblue}
     </style>
     <section [class.awake]="petModel.awake"  >
         <h4>{{petModel.name | uppercase}}</h4>
-        <countdown [isAwake]="petModel.isAwake" [inputTime]="petModel.nextFeedAt" (due)="feedingDue()"></countdown>
+        <countdown *ngIf="petModel.awake" [to]="petModel.nextFeedAt" (due)="feedingDue()"></countdown>
         <img [src]="petModel.imgUrl" alt="">
         <input type="checkbox" [checked]="petModel.awake" (change)="toggle.emit(petModel)" /> Awake? 
     </section>` ////// we bind checkboxes to the checked property!

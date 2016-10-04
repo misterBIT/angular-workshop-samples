@@ -8,7 +8,7 @@
 // import "./day1/020-BuiltinDirectives/main";
 //import "./day1/025-Pipes/main";
 //import "./day1/070-DI-Cars/main";
-// import './day1/pets/main';
+import './day1/pets/main';
 // import './day1/pets-starter/main';
 
 /**********
@@ -41,7 +41,7 @@
 // import "./day3/056-Tabs-ContentProjection3-addTab/main";
 // import "./day3/080-ngForTrackBy/main";
 // import "./day3/modal-component/main";
-import "./day3/090-ObservableDataServices/main";
+// import "./day3/090-ObservableDataServices/main";
 
 
 /**********
