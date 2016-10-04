@@ -1,8 +1,8 @@
 
 import {Component} from '@angular/core'
 
-import {FirstComponent} from './first-component';
-import {SecondComponent} from './second-component';
+import {ItemsCountComponent} from './items-count.component';
+import {ItemsListComponent} from './items-list.component';
 import {MyService} from './my-service';
 
 
@@ -10,8 +10,8 @@ import {MyService} from './my-service';
     selector: 'app',
     template: `
             <div>
-                <first-component></first-component>
-                <second-component></second-component>
+                <items-count></items-count>
+                <items-list></items-list>
             </div>
     `
 })
@@ -26,7 +26,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [ BrowserModule ],      
-  declarations: [ AppComponent, FirstComponent, SecondComponent],   
+  declarations: [ AppComponent, ItemsCountComponent, ItemsListComponent],   
   bootstrap: [ AppComponent ],  
   providers: [ MyService ]                   
 })

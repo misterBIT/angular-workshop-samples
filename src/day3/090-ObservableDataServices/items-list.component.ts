@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {MyService} from './my-service';
 
 @Component({
-  selector: 'second-component',
+  selector: 'items-list',
   template: `
     <div class="well">
       <h2>List of Things</h2>
@@ -12,7 +12,7 @@ import {MyService} from './my-service';
     </div>
   `
 })
-export class SecondComponent {
+export class ItemsListComponent {
   private myArray = new Array<string>();
   
   constructor(private _myService: MyService) { }
