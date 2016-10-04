@@ -16,6 +16,7 @@ export class PetService {
 
   toggle(petModel : PetModel) {
     petModel.toggle();
+     this.pets = [...this.pets];
   }
 
 

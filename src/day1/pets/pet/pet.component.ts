@@ -33,7 +33,8 @@ export class PetComponent {
 
   feedingDue() {
     console.log('Pet is going to sleep!');
-    this.petModel.awake = false;
+    // this.petModel.awake = false;
+    this.toggle.emit(this.petModel);
   }
 
 }

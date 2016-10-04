@@ -7,8 +7,13 @@ import {PetModel} from './pet.model';
 })
 
 export class PetSearchPipe implements PipeTransform {
-  transform(list: PetModel[], [letter]): any {
-    if (!letter) return list;
-    return list.filter(pet => pet.name.startsWith(letter))
-  }
+     transform(pets: PetModel[], filterBy) : any {
+        if (!filterBy) return pets;
+        console.log(filterBy);
+        if (filterBy.letter) pets = pets.filter((pet) => pet.name.toUpperCase().startsWith(filterBy.letter));
+        if (filterBy.showAwake) pets = pets.filter((pet) => pet.awake);
+        console.log('filtered: ', pets);
+        return pets;
+    }
+
 }

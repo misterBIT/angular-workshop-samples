@@ -8,9 +8,9 @@ import { PetService }  from './pet.service';
   template: `
     <section>
       <h2>Pet List</h2>
-      <letter-selector (select)="letter = $event"></letter-selector>
+      <pet-filter (update)="filterBy = $event"></pet-filter>
       <ul>
-        <li *ngFor="let currPet of petService.pets | petSearch:letter">
+        <li *ngFor="let currPet of petService.pets | petSearch:filterBy">
 
           <pet [petModel]="currPet" (toggle)="petService.toggle($event)" >
           </pet>
@@ -23,7 +23,7 @@ import { PetService }  from './pet.service';
   `
 })
 export class PetListComponent {
-private letter : string = '';
+private filterBy = null;
  constructor(private petService : PetService) {
  }
 

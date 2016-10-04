@@ -10,13 +10,14 @@ import { PetInputComponent }  from './pet/pet-input.component';
 import { PetListComponent }  from './pet/pet-list.component';
 import { PetComponent }  from './pet/pet.component';
 import { PetSearchPipe }  from './pet/pet-search.pipe';
+import { PetFilterComponent }  from './pet/pet-filter.component';
 import { PetService }  from './pet/pet.service';
 import { TimeComponent } from './shared/time/time.component';
 import { CountdownComponent } from './shared/time/countdown.component'
 
 @NgModule({
   imports: [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, PetInputComponent, PetListComponent, PetComponent, PetSearchPipe, LetterSelectorComponent,
+  declarations: [ AppComponent, PetInputComponent, PetListComponent, PetFilterComponent, PetComponent, PetSearchPipe, LetterSelectorComponent,
                   TimeComponent, CountdownComponent],
   providers:    [ PetService ],
   bootstrap: [ AppComponent ]
