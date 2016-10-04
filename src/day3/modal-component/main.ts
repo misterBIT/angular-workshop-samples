@@ -26,9 +26,10 @@ export class AppComponent {
 	}
 
 	createModal() {
+		const now = Date.now();
 		this.modalSubject.next({
 			title: `This is a modal dialog`,
-			body: `<p> and all text is displayed as HTML</p>`,
+			body: `<p> and all text is displayed as HTML Now: ${now}</p>`,
 			buttons: [{
 				text: 'ok',
 				cssClass: 'btn-primary',

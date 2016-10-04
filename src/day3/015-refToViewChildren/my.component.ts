@@ -39,5 +39,7 @@ export class MyComp1 implements AfterViewInit {
 
   ngAfterViewInit() {
     this.renderer.invokeElementMethod(this.input.nativeElement,'focus', null );
+    console.log('Focus on the Input');
+    
   }
 }

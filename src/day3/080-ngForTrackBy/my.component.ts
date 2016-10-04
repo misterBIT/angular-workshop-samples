@@ -4,32 +4,7 @@
 
 
 import {Component, Input, ElementRef, AfterViewInit,  Renderer, ViewChild} from '@angular/core';
-import {Directive, AfterContentInit, QueryList,ContentChildren} from '@angular/core';
-
-
-
-@Directive({
-    selector: '[nodeLogger]',
-    inputs: ['nodeLogger']
-})
-export class NodeLoggerDirective {
-    nodeLogger;
-    constructor() {}
-    
-    ngOnChanges( event ) {
-      // If this is the first change of this value, it means that this
-      // is the initial binding of the input after the directive has
-      // just been instantiated for this DOM node.
-      if ( event.nodeLogger.isFirstChange() ) {
-          console.log( "Node logger ** instantiated **:", this.nodeLogger );
-      } else {
-          console.log( "Node logger __ updated __:", this.nodeLogger );
-      }
-    }
-    
-}
-
-
+import {AfterContentInit, QueryList,ContentChildren} from '@angular/core';
 
 
 @Component({
@@ -40,7 +15,7 @@ export class NodeLoggerDirective {
       </p>
       <h3> Friends </h3>
       <ul>
-        <li *ngFor="let friend of friends ; let index = index;  trackBy:$id" nodeLogger="{{ friend.name }} at index {{ index }}.">
+        <li *ngFor="let friend of friends ; let index = index;  " nodeLogger="{{ friend.name }} at index {{ index }}.">
           {{ friend.name }}
         </li>
       </ul>
@@ -63,7 +38,7 @@ export class MyComp {
   // the ID, not the object identity (aka object reference).
   personIdentity( index, person ) {
     //   console.log( "TrackBy:", person.name, "at index", index );
-      return( person.id );
+      return person.id;
   }
 
     // I shuffle (reverse) each of the people collection.
@@ -97,11 +72,11 @@ export class MyComp {
 
     buildCollection(...names) {
         return names.map(
-                                    ( name, i ) => ({
-                                            id: ( i + 1 ),
-                                            name: name
-                                        })
-                                  );
+                    ( name, i ) => ({
+                            id: ( i + 1 ),
+                            name: name
+                        })
+                    );
                                     
         
     }

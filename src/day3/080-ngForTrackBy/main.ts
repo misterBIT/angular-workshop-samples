@@ -1,6 +1,7 @@
 import {Component} from '@angular/core'
 
-import {MyComp, NodeLoggerDirective} from './my.component';
+import {MyComp} from './my.component';
+import {NodeLoggerDirective} from './node-logger.directive';
 
 @Component({
     selector: 'app',

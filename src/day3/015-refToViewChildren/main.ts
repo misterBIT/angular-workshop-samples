@@ -7,7 +7,7 @@ import {MyComp, MyComp1} from './my.component';
 	template: `
         <h1>Ref to Child Element</h1>
         <my-comp></my-comp>
-        <!--<my-comp1></my-comp1>-->
+        <my-comp1></my-comp1>
     `
 })
 class AppComponent {

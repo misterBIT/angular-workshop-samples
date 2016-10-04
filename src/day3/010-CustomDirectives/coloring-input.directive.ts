@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Input,PLATFORM_DIRECTIVES} from '@angular/core';
+import {Directive, ElementRef, Input} from '@angular/core';
 @Directive({
 	selector: '[coloring-input]'
 })
@@ -6,6 +6,8 @@ export class ColoringInputDirective {
 	@Input("coloring-input") letters;
 
 	constructor(private $elementRef:ElementRef) {
+
+		// Working directly with the nativeElement is discouraged
 		$elementRef.nativeElement.addEventListener('keyup', ()=> {
 			$elementRef.nativeElement.style.backgroundColor = this.getRandomColor();
 		});
@@ -13,6 +15,7 @@ export class ColoringInputDirective {
 	}
 	
 	ngOnInit(){
+			// Working directly with the nativeElement is discouraged
 			this.$elementRef.nativeElement.value = this.letters;
 	}
 
