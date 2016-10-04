@@ -43,7 +43,7 @@ import {NgStyle} from '@angular/common';
               state('in', style({transform: 'translateY(0)'})),
               transition('void => *', [
                 style({transform: 'translateY(-100%)'}),
-                animate(100)
+                animate(1000)
               ]),
               transition('* => void', [
                 animate(100, style({transform: 'translateY(100%)'}))

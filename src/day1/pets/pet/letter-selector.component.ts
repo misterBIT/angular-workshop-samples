@@ -14,11 +14,11 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class LetterSelectorComponent {
     @Output('select') selectEmitter = new EventEmitter(); // inputs/outputs can be renamed
     letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-    letterSelected = ''; 
+    letterSelected = '';
 
-    selectLetter(letter) {
+    selectLetter(letter : string) {
         if (this.letterSelected === letter) this.letterSelected = '';
         else  this.letterSelected = letter;
-        this.selectEmitter.emit(this.letterSelected) 
+        this.selectEmitter.emit(this.letterSelected)
     }
 }

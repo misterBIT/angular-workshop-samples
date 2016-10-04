@@ -8,7 +8,7 @@
 //import "./day1/020-BuiltinDirectives/main";
 //import "./day1/025-Pipes/main";
 //import "./day1/070-DI-Cars/main";
-// import './day1/pets/main';
+import './day1/pets/main';
 // import './day1/pets-starter/main';
 
 /**********
@@ -48,7 +48,7 @@
  Day4
  *********/
 //import "./day4/CustomElementInterop/main";
-import "./day4/monstersAndChat/main";
+// import "./day4/monstersAndChat/main";
 // import "./day4/animate-samples/demo1/main";
 // import "./day4/animate-samples/demo-states/main";
 // import "./day4/animate-samples/demo-scene/main";
