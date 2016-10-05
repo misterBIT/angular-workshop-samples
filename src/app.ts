@@ -2,7 +2,7 @@
  Day1
  *********/
 
-// import "./day1/000-Tries/main";
+//import "./day1/000-Tries/main";
 // import "./day1/010-counterInputOutput/main";
 // import "./day1/012-DisplayAndEvents/main";
 // import "./day1/020-BuiltinDirectives/main";
