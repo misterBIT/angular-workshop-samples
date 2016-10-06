@@ -9,6 +9,7 @@
 //import "./day1/025-Pipes/main";
 //import "./day1/070-DI-Cars/main";
 import './day1/pets/main';
+import './day2/forms-live-coding/main.ts';
 // import './day1/pets-starter/main';
 
 /**********
@@ -16,7 +17,6 @@ import './day1/pets/main';
  *********/
 // import "./day2/lifecycle/main";
 //import "./day2/040-MonsterForm/main";
-// import "./day2/forms-live-coding/main.ts";
 // import "./day2/forms-live-coding-template-driven/main.ts";
 // import './day2/forms-live-coding-model-driven/main.ts';
 // import "./day2/forms-live-coding/main.ts";
