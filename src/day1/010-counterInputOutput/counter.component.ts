@@ -9,24 +9,24 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
   `],
   template: `
     
-    Counter: {{counterValue}}
+    Counter: {{counterValue.val}}
     <button (click)="increment()">+</button>
     <button (click)="decrement()">-</button> 
   `,
   // outputs: ['counterChange:change']
 })
 export class CounterComponent {
-    @Input('init') counterValue = 0;
+    @Input('init') counterValue = {val: 0};
     @Output('change') counterChange = new EventEmitter();
   
   increment() {
-    this.counterValue++;
+    this.counterValue.val++;
     this.counterChange.emit({
       value: this.counterValue
     })
   }
   decrement() {
-    this.counterValue--;
+    this.counterValue.val--;
     this.counterChange.emit({
       value: this.counterValue
     })

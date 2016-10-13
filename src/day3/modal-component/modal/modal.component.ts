@@ -1,5 +1,4 @@
-import {Component, OnInit, EventEmitter, Output, OnDestroy, ChangeDetectorRef} from '@angular/core';
-import {Input} from "@angular/core/src/metadata/directives";
+import {Component, OnInit, EventEmitter, Output, OnDestroy, ChangeDetectorRef, Input} from '@angular/core';
 import {Observable, Subscription} from "rxjs";
 export interface IBtnDef {
 	text: string;
@@ -42,7 +41,7 @@ export interface IModalDefinition {
 			
 	}`]
 })
-export class ModalCompoonent implements OnInit,OnDestroy {
+export class ModalCompoonent {
 	@Input() modalObs: Observable<IModalDefinition>;
 	@Output() modalClosed = new EventEmitter(false);
 	private data = null;

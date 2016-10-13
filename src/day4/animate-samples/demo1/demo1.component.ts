@@ -49,6 +49,14 @@ import {NgStyle} from '@angular/common';
                 animate(100, style({transform: 'translateY(100%)'}))
               ])
             ])
+// From Angular 2.1.0            
+// transition(":enter", [
+//   style({ opacity: 0 }),
+//   animate(500, style({ opacity: 1 }))
+// ])
+// transition(":leave", [
+//   animate(500, style({ opacity: 0 }))
+// ])            
 
 
     ]

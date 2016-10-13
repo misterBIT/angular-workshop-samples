@@ -7,9 +7,10 @@ import {Observable} from 'rxjs/Observable';
 	template       : `
         <div class="badge">
             {{counter}}
-            <button (click)="attachCD(true)">Attach</button>
-            <button (click)="attachCD(false)">Detach</button>
         </div>
+		<button (click)="attachCD(true)">Attach</button>
+		<button (click)="attachCD(false)">Detach</button>
+
     `
 })
 export class CartBadgeCmp implements OnInit {

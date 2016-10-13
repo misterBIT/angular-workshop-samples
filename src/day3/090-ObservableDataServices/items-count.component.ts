@@ -19,7 +19,7 @@ export class ItemsCountComponent {
     this.myService.items$.subscribe(latestCollection => {
       this.count = latestCollection.length;
       console.log('count is: ', this.count);
-      //this.changeDetectorRef.detectChanges();
+      // this.changeDetectorRef.markForCheck();
     });
   }
 }
