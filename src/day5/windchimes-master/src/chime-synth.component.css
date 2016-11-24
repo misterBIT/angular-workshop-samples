@@ -1,0 +1,37 @@
+.ring, .light {
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  width: 800px;
+  height: 800px;
+  border-radius: 400px;
+  opacity: 0;
+  backface-visibility: hidden;
+  overflow: visible;
+}
+
+.ring {
+  filter: hue-rotate(0);
+  transition: filter 10s ease-in-out;
+}
+.ring.s1 { background-color: #0077be; }
+.ring.s2 { background-color: #e7feff; }
+.ring.s3 { background-color: #a2add0; }
+.ring.s4 { background-color: #4682b4; }
+.ring.s5 { background-color: #9bddff; }
+.ring.s6 { background-color: #6495ed; }
+.ring.s7 { background-color: #4997d0; }
+.ring.s8 { background-color: #007bbb; }
+
+.ring.blur {
+  filter: hue-rotate(90deg);
+}
+
+.light {
+  background-image: radial-gradient(
+    circle farthest-side,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.1) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
