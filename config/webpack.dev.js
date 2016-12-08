@@ -13,7 +13,7 @@ const webpackConfig = {
 		'app': './src/app.ts'
 	},
 	output: {
-		path: path.resolve(__dirname, '../dist'),
+		path: path.resolve(__dirname, '../dist')
 	}
 };
 

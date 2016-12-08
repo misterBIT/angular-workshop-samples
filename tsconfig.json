@@ -22,7 +22,8 @@
     "socket.io-client"
   ],
   "awesomeTypescriptLoaderOptions": {
-    "useWebpackText": true
+    "useWebpackText": true,
+    "emitRequireType":true
   },
   "compileOnSave": false,
   "buildOnSave": false

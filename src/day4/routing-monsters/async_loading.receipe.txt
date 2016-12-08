@@ -1,0 +1,7 @@
+1) remove monster module import & imports (ngModule) in appmodule (main.ts)monsterCenterRoutes
+2) in app.routes add the monster path which uses loadChildren and points to the monsterModule
+    -(speak about # for export name)
+    - speak about what webpack does here - search for loadChildren in app.bundle.js
+
+3) monsterCenterRoutes - change 'monster' to '' (this is the new 'root' for this child router)
+
