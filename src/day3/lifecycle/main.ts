@@ -24,7 +24,7 @@ import {Spy} from './spy.directive';
 		OnChangesParentComponent, PeekABooParentComponent, PeekABooComponent,
 		Spy, SpyParentComponent, MyHeroComponent,
 		CounterParentComponent, MyCounter,
-		CartBadgeCmp],
+		CartBadgeCmp,DoCheckComponent,DoCheckParentComponent],
 	bootstrap: [AppComponent]
 })
 export class AppModule {

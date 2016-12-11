@@ -17,9 +17,10 @@ import {ItemsService} from './cart/cart.service';
 @Component({
 	selector: 'app',
 	template: `
- 	<peek-a-boo-parent></peek-a-boo-parent>
-    <cart-badge [itemStream]="itemsService.items$"></cart-badge>
-    <button (click)="addItem()" >Add Item</button>
+ 	<!--<peek-a-boo-parent></peek-a-boo-parent>-->
+ 	<do-check-parent></do-check-parent>
+    <!--<cart-badge [itemStream]="itemsService.items$"></cart-badge>-->
+    <!--<button (click)="addItem()" >Add Item</button>-->
   `,
 
 })
