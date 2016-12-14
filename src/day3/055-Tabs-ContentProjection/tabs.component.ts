@@ -1,10 +1,8 @@
 import {Component} from '@angular/core';
 import {TabComponent} from './tab.component';
-import {Test} from "./test.service";
 @Component({
 	selector: 'tabs',
 	styles: [`li.active a {text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);}`],
-	viewProviders: [Test],
 	template: `
     <ul class="nav nav-tabs">
         <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">

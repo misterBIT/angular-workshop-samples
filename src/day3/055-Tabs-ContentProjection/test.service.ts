@@ -1,5 +1,6 @@
+import {CarService} from '../070-DI-Cars/car.service';
 export  class Test {
-	constructor() {
+	constructor(carService:CarService) {
 		console.log('created');
 	}
 }
