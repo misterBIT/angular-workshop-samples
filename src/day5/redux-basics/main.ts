@@ -66,7 +66,7 @@ function counterReducer(count: number = 0, action: any) {
 }
 //app.reducer.ts
 function appReducer(state: ApplicationState = {count: 0}, action) {
-    console.log("Processing action " + action.type);
+    console.log("Processing action " + (action.type || actions[action] ));
     let newState: ApplicationState = {
         count: counterReducer(state.count, action)
     };
