@@ -1,6 +1,6 @@
 // TODO SOMEDAY: Feature Componetized like CrisisCenter
 import {Component, OnInit} from '@angular/core';
-import {Car, CarService} from './car.service.ts';
+import {Car, CarService} from './car.service';
 import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({

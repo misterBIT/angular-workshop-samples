@@ -10,6 +10,8 @@ import {OnChangesParentComponent, MyHeroComponent} from './on-changes.component'
 import {PeekABooParentComponent} from './peek-a-boo-parent.component';
 import {SpyParentComponent} from './spy.component';
 import {CartBadgeCmp} from './cart/cart-badge.component';
+import {DoCheckComponent, DoCheckParentComponent} from './do-check.component';
+
 import {ItemsService} from './cart/cart.service';
 import {ChildComponent} from './child.component';
 import {PeekABooComponent} from './peek-a-boo.component';

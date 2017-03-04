@@ -1,6 +1,6 @@
 import {Component, NgModule} from '@angular/core';
 import {FormBuilder, Validators, FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {UsernameValidator} from './usernameValidator.ts';
+import {UsernameValidator} from './usernameValidator';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserModule} from '@angular/platform-browser';
 

@@ -1,5 +1,5 @@
 // import './day2/000-Tries/main';
-// import "./day2/010-counterInputOutput/main";
+import "./day2/010-counterInputOutput/main";
 // import "./day2/012-DisplayAndEvents/main";
 // import "./day2/020-BuiltinDirectives/main";
 // import "./day2/025-Pipes/main";
@@ -43,7 +43,7 @@
 /**********
  Day5
  *********/
-import './day5/redux-basics/main';
+// import './day5/redux-basics/main';
 // import './day5/redux_pattern_logout_timer/main';
 // import "./day5/CustomElementInterop/main";
 // import './day5/setDocmentTitle/main.ts'
