@@ -3,6 +3,7 @@ import {FaderComponent} from './fader.component';
 import {DemoSceneComponent} from './demo-scene.component';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @Component({
     selector: 'app',
@@ -21,7 +22,7 @@ class AppComponent {
 }
 
 @NgModule({
-  imports: [ BrowserModule],      
+  imports: [ BrowserModule,BrowserAnimationsModule],
   declarations: [ AppComponent, FaderComponent, DemoSceneComponent],   
   bootstrap: [ AppComponent ],     
   providers: [ ]                   

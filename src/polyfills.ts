@@ -1,4 +1,6 @@
 import 'ie-shim';
+import {__extends as e} from 'tslib';
+global['__extends'] = e;
 import 'web-animations-js';
 import 'core-js/es6/symbol';
 import 'core-js/es6/object';
@@ -20,3 +22,4 @@ import 'core-js/es6/reflect';
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';
 import 'zone.js/dist/long-stack-trace-zone';
+import {__extends} from 'tslib';

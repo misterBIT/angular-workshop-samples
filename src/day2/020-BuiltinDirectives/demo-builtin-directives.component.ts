@@ -15,14 +15,15 @@ import {Component} from '@angular/core';
          (click)="toggle()">
          Click me!
      </button>
+    <input (keyup.enter)="toeChoice = $event.target.value" [value]="toeChoice"/>
      <hr>
      <h1 [ngSwitch]="toeChoice">
      
-        <template [ngSwitchCase]="'Eenie'">Eenie</template>
-        <template [ngSwitchCase]="'Meanie'">Meanie</template>
-        <template [ngSwitchCase]="'Miney'">Miney</template>
-        <template [ngSwitchCase]="'Moe'">Moe</template>
-        <template ngSwitchDefault>Other</template>
+        <ng-template [ngSwitchCase]="'Eenie'">Eenie</ng-template>
+        <ng-template [ngSwitchCase]="'Meanie'">Meanie</ng-template>
+        <ng-template [ngSwitchCase]="'Miney'">Miney</ng-template>
+        <ng-template [ngSwitchCase]="'Moe'">Moe</ng-template>
+        <ng-template ngSwitchDefault>Other</ng-template>
     </h1>
      
     `

@@ -3,6 +3,7 @@ import {Demo1Component} from './demo1.component';
 import {DialogComponent} from './dialog/dialog.component';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @Component({
     selector: 'app',
@@ -16,7 +17,7 @@ class AppComponent {
 }
 
 @NgModule({
-  imports: [ BrowserModule],      
+  imports: [ BrowserModule,BrowserAnimationsModule],
   declarations: [ AppComponent, Demo1Component, DialogComponent],   
   bootstrap: [ AppComponent ],     
   providers: [ ]                   

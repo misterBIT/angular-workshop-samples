@@ -3,22 +3,22 @@
         <md-card-title>Registration Form</md-card-title>
         <md-card-content>
             <div class="flex">
-                <md-input placeholder="First name"></md-input>
-                <md-input placeholder="Last name"></md-input>
+                <input md-input placeholder="First name"/>
+                <input md-input placeholder="Last name"/>
             </div>
-            <md-input placeholder="Username"></md-input>
+            <input md-input placeholder="Username"/>
             <div>
                 <div>
                     <p>Address</p>
-                    <md-input placeholder="Street" required></md-input>
+                    <input md-input placeholder="Street" required/>
                     <div class="flex align-center">
-                        <md-input placeholder="City"></md-input>
+                        <input md-input placeholder="City"/>
                         <select>
                             <option value="" disabled>Select a state</option>
                             <option value="CA">CA</option>
                             <option value="NY">NY</option>
                         </select>
-                        <md-input placeholder="zip" type="number"></md-input>
+                        <input md-input placeholder="zip" type="number"/>
                     </div>
                 </div>
                 <!--<button md-button (click)="addAddress()">ADD ADDRESS</button>-->
