@@ -1,7 +1,7 @@
 // import './day2/000-Tries/main';
-// import "./day2/010-counterInputOutput/main";
+// import "./day2/010--counterInputOutput/main";
 // import "./day2/012-DisplayAndEvents/main";
-// import "./day2/020-BuiltinDirectives/main";
+import "./day2/020-BuiltinDirectives/main";
 // import "./day2/025-Pipes/main";
 // import './day2/pets/main';
 // import './day2/pets-starter/main';
@@ -40,14 +40,14 @@
 // import "./day4/routing-monsters/main.ts";
 
 
+
 /**********
  Day5
  *********/
-import './day5/redux-basics/main';
+// import './day5/redux-basics/main';
 // import './day5/redux_pattern_logout_timer/main';
 // import "./day5/CustomElementInterop/main";
 // import './day5/setDocmentTitle/main.ts'
-// import './day5/monstersAndChat/main';
 // import "./day5/animate-samples/demo1/main";
 // import "./day5/animate-samples/demo-states/main";
 // import "./day5/animate-samples/demo-scene/main";
@@ -56,3 +56,4 @@ import './day5/redux-basics/main';
 /**********
  Day6
  *********/
+// import './day6/monstersAndChat/main';
