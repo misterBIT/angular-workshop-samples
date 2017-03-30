@@ -1,9 +1,7 @@
-import {TestBed, inject} from '@angular/core/testing';
+import {async, ComponentFixture, inject, TestBed} from '@angular/core/testing';
 import {ChatRoomComponent} from './chat-room.component';
 import {ChatRoomService} from './chat-room.service';
 import {BehaviorSubject} from 'rxjs';
-import {async} from '@angular/core/testing/async';
-import {ComponentFixture} from '@angular/core/testing/component_fixture';
 import {By} from '@angular/platform-browser';
 const simulant = require('simulant');
 

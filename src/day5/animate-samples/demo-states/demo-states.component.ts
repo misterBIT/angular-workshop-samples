@@ -1,4 +1,5 @@
-import {Component, trigger, style, animate, state, transition} from '@angular/core';
+import {Component} from '@angular/core';
+import { trigger, style, animate, state, transition} from '@angular/animations';
 @Component({
     selector: 'demo-states',
     template: `

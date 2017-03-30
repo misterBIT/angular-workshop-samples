@@ -13,7 +13,7 @@ class AppComponent {
 }
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, MdCardModule.forRoot(), MdButtonModule.forRoot(), MdInputModule.forRoot()],
+    imports: [BrowserModule, FormsModule, MdCardModule, MdButtonModule, MdInputModule],
     declarations: [AppComponent, FormComponent],
     bootstrap: [AppComponent],
     providers: []
