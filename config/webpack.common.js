@@ -25,7 +25,7 @@ module.exports = {
 			{test: /\.html$/, loader: 'raw-loader'}
 		]
 	},
-	devtool: 'cheap-module-source-map',
+	devtool: 'source-map',
 	cache: true,
 	output: {
 		filename: '[name].bundle.js',
