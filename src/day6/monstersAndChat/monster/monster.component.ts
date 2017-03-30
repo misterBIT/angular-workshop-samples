@@ -5,7 +5,7 @@ import {MonsterModel} from './monster.model';
 
 
 @Component({
-	styleUrls: [`monster.css`],
+	styleUrls: [`./monster.scss`],
 	selector: 'monster-list',
 	template: `
     <section *ngIf="monster">

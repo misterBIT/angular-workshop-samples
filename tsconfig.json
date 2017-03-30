@@ -5,25 +5,25 @@
     "outDir": "dist",
     "rootDir": ".",
     "sourceMap": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "lib": [
+      "es2015",
+      "es2016",
+      "es2017",
+      "dom"
+    ],
     "moduleResolution": "node"
   },
+
   "exclude": [
     "node_modules"
   ],
-  "types": [
-    "jasmine",
-    "hammerjs",
-    "webpack",
-    "uglifyjs",
-    "core-js",
-    "node",
-    "socket.io-client"
-  ],
   "awesomeTypescriptLoaderOptions": {
     "useWebpackText": true,
-    "emitRequireType":true
+    "emitRequireType": true
   },
   "compileOnSave": false,
   "buildOnSave": false

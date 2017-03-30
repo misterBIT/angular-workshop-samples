@@ -7,7 +7,7 @@ module.exports = {
 	plugins: [
 		new webpack.ContextReplacementPlugin(
 			// The (\\|\/) piece accounts for path separators in *nix and Windows
-			/angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+			/angular(\\|\/)core(\\|\/)@angular/,
 			path.resolve(__dirname, '.../src') // location of your src
 		),
 		new CopyWebpackPlugin([{from: 'src/data/', to: '.'}]),
@@ -17,15 +17,15 @@ module.exports = {
 			// .ts files for TypeScript
 			{test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader','angular2-router-loader']},
 			{test: /\.css$/, loaders: ['to-string-loader', 'css-loader']},
-			{test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff'},
-			{test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
-			{test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
-			{test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'},
-			{test: /\.scss$/, loaders: ["to-string-loader", "css", 'resolve-url', "sass"]},
+			{test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=application/font-woff'},
+			{test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=application/octet-stream'},
+			{test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader'},
+			{test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml'},
+			{test: /\.scss$/, loaders: ["to-string-loader", "css-loader", 'resolve-url-loader', "sass-loader"]},
 			{test: /\.html$/, loader: 'raw-loader'}
 		]
 	},
-	devtool: 'cheap-module-source-map',
+	devtool: 'source-map',
 	cache: true,
 	output: {
 		filename: '[name].bundle.js',

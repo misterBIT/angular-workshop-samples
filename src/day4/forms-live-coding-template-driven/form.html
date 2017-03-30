@@ -3,22 +3,22 @@
         <md-card-title>Registration Form</md-card-title>
         <md-card-content>
             <div class="flex">
-                <md-input [ngModel]="user.firstName" name="firstName" placeholder="First name"></md-input>
-                <md-input [ngModel]="user.lastName" name="lastName" placeholder="Last name"></md-input>
+                <input md-input [ngModel]="user.firstName" name="firstName" placeholder="First name"/>
+                <input md-input [ngModel]="user.lastName" name="lastName" placeholder="Last name"/>
             </div>
-            <md-input [(ngModel)]="user.username" #userInput="ngModel" name="username" required minlength="5" placeholder="Username"></md-input>
+            <input md-input [(ngModel)]="user.username" #userInput="ngModel" name="username" required minlength="5" placeholder="Username"/>
             <span [hidden]="userInput.valid || userInput.pristine">Username must be longer than 5 letters</span>
             <div ngModelGroup="address">
                 <p>Address</p>
-                <md-input [ngModel]="street" name="street" placeholder="Street" required></md-input>
+                <input md-input [ngModel]="street" name="street" placeholder="Street" required/>
                 <div class="flex align-center">
-                    <md-input ngModel name="city" placeholder="City"></md-input>
+                    <input md-input ngModel name="city" placeholder="City"/>
                     <select ngModel name="state">
                         <option value="" disabled>Select a state</option>
                         <option value="CA">CA</option>
                         <option value="NY">NY</option>
                     </select>
-                    <md-input ngModel pattern="" name="zip" placeholder="zip" type="number"></md-input>
+                    <input md-input ngModel pattern="" name="zip" placeholder="zip" type="number"/>
                 </div>
             </div>
             <p>Would you like a newsletter?</p>
