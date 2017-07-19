@@ -1,6 +1,6 @@
 import {Component, NgModule} from '@angular/core';
-import {MyComp} from './my.component';
-import {MyComp1} from './my.component1';
+// import {MyComp} from './my.component';
+import { InputDir, MyComp1 } from './my.component1';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserModule} from '@angular/platform-browser';
 
@@ -8,8 +8,8 @@ import {BrowserModule} from '@angular/platform-browser';
 	selector: 'app',
 	template: `
         <h1>Ref to Child Element</h1>
-        <my-comp></my-comp>
-        <!--<my-comp1></my-comp1>-->
+        <!--<my-comp></my-comp>-->
+        <my-comp1></my-comp1>
     `
 })
 class AppComponent {
@@ -19,7 +19,7 @@ class AppComponent {
 
 @NgModule({
 	imports: [BrowserModule],
-	declarations: [AppComponent, MyComp, MyComp1],
+	declarations: [InputDir,AppComponent, MyComp1],
 	bootstrap: [AppComponent],
 	providers: []
 })

@@ -3,39 +3,37 @@
         <md-card-title>Registration Form</md-card-title>
         <md-card-content>
             <div class="flex">
-                <input md-input placeholder="First name"/>
-                <input md-input placeholder="Last name"/>
+                <md-input-container>
+                    <input mdInput placeholder="First name"/>
+                </md-input-container>
+                <md-input-container><input mdInput placeholder="Last name"/></md-input-container>
             </div>
-            <input md-input placeholder="Username"/>
+            <md-input-container><input mdInput placeholder="Username"/></md-input-container>
             <div>
                 <div>
                     <p>Address</p>
-                    <input md-input placeholder="Street" required/>
+                    <md-input-container><input mdInput placeholder="Street" required/></md-input-container>
                     <div class="flex align-center">
-                        <input md-input placeholder="City"/>
+                        <md-input-container><input mdInput placeholder="City"/></md-input-container>
                         <select>
                             <option value="" disabled>Select a state</option>
                             <option value="CA">CA</option>
                             <option value="NY">NY</option>
                         </select>
-                        <input md-input placeholder="zip" type="number"/>
+                        <md-input-container><input mdInput placeholder="zip" type="number"/></md-input-container>
                     </div>
                 </div>
                 <!--<button md-button (click)="addAddress()">ADD ADDRESS</button>-->
             </div>
             <p>Would you like a newsletter?</p>
-            <label for="yes">
-                <input type="radio" id="yes">
-                Yes
-            </label>
-            <label for="no">
-                <input type="radio" id="no">
-                No
-            </label>
-            <input type="checkbox"> I am not a robot
+            <md-radio-group>
+                <md-radio-button id="yes">Yes</md-radio-button>
+                <md-radio-button id="no">No</md-radio-button>
+            </md-radio-group>
+            <md-checkbox> I am not a robot</md-checkbox>
         </md-card-content>
         <md-card-actions align="end">
-            <button md-button color="primary" type="submit">SUBMIT</button>
+            <button mdButton color="primary" type="submit">SUBMIT</button>
         </md-card-actions>
     </md-card>
 </form>

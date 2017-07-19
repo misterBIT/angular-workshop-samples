@@ -1,16 +1,15 @@
-import {Directive, ElementRef, Input, Renderer, HostListener, HostBinding} from '@angular/core';
+import { Directive, ElementRef, HostListener, HostBinding, Renderer2 } from '@angular/core';
 
 @Directive({
-	selector: '[myHighlight]',
-	host: {    '(mouseenter)': 'onMouseEnter()',    '(mouseleave)': 'onMouseLeave()'  }
+	selector: '[myHighlight]'
 })
 export class HighlightDirective {
-	constructor(private el:ElementRef, private render:Renderer) {
+	constructor(private el:ElementRef, private render:Renderer2) {
 		this.el.nativeElement.style.backgroundColor = 'lightblue';
 		// this.betterUseTheRenderer();
 	}
 
-	// @HostListener('mouseenter')
+	@HostListener('mouseenter')
 	onMouseEnter() { 
 		console.log('Enter');
 		this._refont('Cursive');
@@ -18,7 +17,7 @@ export class HighlightDirective {
 		this.isEditable = true; 
 	}
 
-	// @HostListener('mouseleave')  
+	@HostListener('mouseleave')
 	onMouseLeave() { 
 		console.log('Leave');   
 		this._refont('Arial'); 
@@ -27,19 +26,22 @@ export class HighlightDirective {
 	}
 
 	private _refont(font: string) {
-		this.el.nativeElement.style.fontFamily = font;  
+		this.font= font;
 	}
 
-	// @HostBinding('class.other')
-	private other = false;
+	@HostBinding('class.other')
+	private other = false;
+
+	@HostBinding('style.fontFamily')
+	private font = 'Arial';
 
 
-	// @HostBinding('contentEditable')
+	@HostBinding('contentEditable')
 	private isEditable = false;
 
 	betterUseTheRenderer() {
 		// This is cross-platform code
-		this.render.setElementStyle(this.el.nativeElement,'backgroundColor','gold');
+		this.render.setStyle(this.el.nativeElement,'backgroundColor','gold');
 	}
 
 

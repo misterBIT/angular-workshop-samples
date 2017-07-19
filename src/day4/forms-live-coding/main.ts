@@ -1,21 +1,23 @@
 import {Component, NgModule} from '@angular/core';
-import {MdCardModule, MdInputModule, MdButtonModule} from '@angular/material';
+import {MdButtonModule, MdCardModule, MdCheckboxModule, MdInputModule, MdRadioModule} from '@angular/material';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @Component({
-    selector: 'app',
-    templateUrl: 'form.html',
+	selector: 'app',
+	templateUrl: 'form.html',
+	styleUrls: ['./forms.css','./deeppurple-amber.css']
 })
 class AppComponent {
 }
 
 
 @NgModule({
-    imports: [BrowserModule, MdCardModule.forRoot(), MdButtonModule.forRoot(), MdInputModule.forRoot()],
-    declarations: [AppComponent],
-    bootstrap: [AppComponent],
-    providers: []
+	imports: [BrowserAnimationsModule,BrowserModule, MdCardModule, MdButtonModule, MdInputModule,MdRadioModule,MdCheckboxModule],
+	declarations: [AppComponent],
+	bootstrap: [AppComponent],
+	providers: []
 })
 export class AppModule {
 }

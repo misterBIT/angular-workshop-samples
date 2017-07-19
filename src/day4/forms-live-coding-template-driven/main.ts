@@ -4,6 +4,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {FormComponent} from './form';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @Component({
     selector: 'app',
@@ -13,7 +14,7 @@ class AppComponent {
 }
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, MdCardModule, MdButtonModule, MdInputModule],
+    imports: [BrowserAnimationsModule,BrowserModule, FormsModule, MdCardModule, MdButtonModule, MdInputModule],
     declarations: [AppComponent, FormComponent],
     bootstrap: [AppComponent],
     providers: []

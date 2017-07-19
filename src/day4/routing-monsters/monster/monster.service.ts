@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
+import {Http,Response} from '@angular/http';
 
 export class Monster {
 	constructor(public id: number, public name: string) {
@@ -25,7 +25,7 @@ export class MonsterService {
 		//return this.monstersPromise;
 		if (!this.monstersPromise) {
 			this.monstersPromise = this.http.get('data/monsters.json')
-				.map(res => res.json())
+				.map((res:Response) => res.json())
 				.map(json => json.data)
 				.toPromise();
 		}

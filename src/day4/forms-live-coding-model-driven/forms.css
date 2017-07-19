@@ -31,15 +31,15 @@ md-card {
     justify-content: center;
 }
 
-md-input {
+mdInput {
     width: 100%;
 }
 
-md-input, label, select {
+mdInput, label, select {
     margin-right: 8px;
 }
 
-md-input:last-child {
+mdInput:last-child {
     margin-right: 0;
 }
 

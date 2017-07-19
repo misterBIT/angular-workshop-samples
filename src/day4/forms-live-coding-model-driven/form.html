@@ -3,25 +3,25 @@
         <md-card-title>Registration Form</md-card-title>
         <md-card-content>
             <div class="flex">
-                <input md-input formControlName="firstName" placeholder="First name"/>
-                <input md-input formControlName="lastName" placeholder="Last name"/>
+                <input mdInput formControlName="firstName" placeholder="First name"/>
+                <input mdInput formControlName="lastName" placeholder="Last name"/>
             </div>
-            <input md-input formControlName="username" placeholder="Username"/>
+            <input mdInput formControlName="username" placeholder="Username"/>
             <div [hidden]="myForm.get('username').valid || myForm.get('username').pristine" class="alert alert-danger">
                 Name is required
             </div>
             <div formArrayName="address" Name="address">
                 <div *ngFor="let address of addresses.controls; let i = index;" [formGroupName]="i">
                     <p>Address</p>
-                    <input md-input formControlName="street" placeholder="Street"/>
+                    <input mdInput formControlName="street" placeholder="Street"/>
                     <div class="flex align-center">
-                        <input md-input formControlName="city" placeholder="City"/>
+                        <input mdInput formControlName="city" placeholder="City"/>
                         <select formControlName="state">
                             <option value="" disabled>Select a state</option>
                             <option value="CA">CA</option>
                             <option value="NY">NY</option>
                         </select>
-                        <input md-input formControlName='zip' placeholder="zip" type="number"/>
+                        <input mdInput formControlName='zip' placeholder="zip" type="number"/>
                     </div>
                 </div>
                 <button md-button (click)="addAddress()">ADD ADDRESS</button>

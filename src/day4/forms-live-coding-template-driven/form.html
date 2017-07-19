@@ -3,22 +3,22 @@
         <md-card-title>Registration Form</md-card-title>
         <md-card-content>
             <div class="flex">
-                <input md-input [ngModel]="user.firstName" name="firstName" placeholder="First name"/>
-                <input md-input [ngModel]="user.lastName" name="lastName" placeholder="Last name"/>
+                <md-input-container><input mdInput [ngModel]="user.firstName" name="firstName" placeholder="First name"/></md-input-container>
+                <md-input-container><input mdInput [ngModel]="user.lastName" name="lastName" placeholder="Last name"/></md-input-container>
             </div>
-            <input md-input [(ngModel)]="user.username" #userInput="ngModel" name="username" required minlength="5" placeholder="Username"/>
+            <md-input-container><input mdInput [(ngModel)]="user.username" #userInput="ngModel" name="username" required minlength="5" placeholder="Username"/></md-input-container>
             <span [hidden]="userInput.valid || userInput.pristine">Username must be longer than 5 letters</span>
             <div ngModelGroup="address">
                 <p>Address</p>
-                <input md-input [ngModel]="street" name="street" placeholder="Street" required/>
+                <md-input-container><input mdInput [ngModel]="street" name="street" placeholder="Street" required/></md-input-container>
                 <div class="flex align-center">
-                    <input md-input ngModel name="city" placeholder="City"/>
+                    <md-input-container><input mdInput ngModel name="city" placeholder="City"/></md-input-container>
                     <select ngModel name="state">
                         <option value="" disabled>Select a state</option>
                         <option value="CA">CA</option>
                         <option value="NY">NY</option>
                     </select>
-                    <input md-input ngModel pattern="" name="zip" placeholder="zip" type="number"/>
+                    <md-input-container><input mdInput ngModel pattern="" name="zip" placeholder="zip" type="number"/></md-input-container>
                 </div>
             </div>
             <p>Would you like a newsletter?</p>
@@ -33,7 +33,7 @@
             <input type="checkbox" ngModel name="human"> I am not a robot
         </md-card-content>
         <md-card-actions align="end">
-            <button md-button color="primary" type="submit">SUBMIT</button>
+            <button mdButton color="primary" type="submit">SUBMIT</button>
         </md-card-actions>
     </md-card>
 </form>
