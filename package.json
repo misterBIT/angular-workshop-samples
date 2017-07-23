@@ -71,6 +71,6 @@
     "socket.io": "^1.7.3",
     "socket.io-client": "^1.7.3",
     "web-animations-js": "^2.2.2",
-    "zone.js": "~0.8.5"
+    "zone.js": "0.8.12"
   }
 }

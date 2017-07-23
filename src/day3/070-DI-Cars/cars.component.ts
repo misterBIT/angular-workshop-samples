@@ -1,7 +1,7 @@
 import {Component, OpaqueToken, Inject} from '@angular/core';
 import {CarService} from './car.service';
 import {CONFIG} from './common/app-config';
-import {CarsCollection, Car} from './car';
+import {CarsCollectionToken, Car} from './car';
 export const myToken = new OpaqueToken('CARS');
 
 @Component({
@@ -13,10 +13,10 @@ export const myToken = new OpaqueToken('CARS');
 		{
 			provide: myToken, useFactory: (config)=> config.title + 'demo', deps: ['app.config']
 		},
-		{provide: CarsCollection, useValue: new Car('puk-123', 120), multi: true},
-		{provide: CarsCollection, useValue: new Car('muk-777', 80), multi: true},
-		{provide: CarsCollection, useValue: new Car('shuk-178', 90), multi: true},
-		{provide: CarsCollection, useValue: new Car('luk-156', 20), multi: true}
+		{provide: CarsCollectionToken, useValue: new Car('puk-123', 120), multi: true},
+		{provide: CarsCollectionToken, useValue: new Car('muk-777', 80), multi: true},
+		{provide: CarsCollectionToken, useValue: new Car('shuk-178', 90), multi: true},
+		{provide: CarsCollectionToken, useValue: new Car('luk-156', 20), multi: true}
 	],
 
 	template: `
@@ -33,12 +33,12 @@ export class CarsComponent {
 	cars;
 
 	constructor(private carService:CarService, @Inject(myToken) demo) {
-		//console.log(demo);
+		console.log('demo:', demo); 
 		this.cars = this.carService.query();
 	}
 
 	onCarDeleted(car) {
-		console.log(`Car ${car.plate} is deleted`);
+		console.log(`Car ${car.plate} will be deleted`);
 	}
 
 }

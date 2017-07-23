@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Directive, ElementRef, QueryList, Renderer, ViewChildren} from '@angular/core';
+import {AfterViewInit, Component, Directive, ElementRef, QueryList, Renderer, ViewChildren, ViewChild} from '@angular/core';
 
 /* BETTER OPTION: */
 
@@ -19,13 +19,14 @@ export class InputDir{
   `
 })
 export class MyComp1 implements AfterViewInit {
-    @ViewChildren(InputDir) input: QueryList<InputDir>;
+    @ViewChild(InputDir) input: InputDir;
+    @ViewChildren(InputDir) inputs: QueryList<InputDir>;
 
     constructor(private renderer: Renderer) {}
 
     ngAfterViewInit() {
-        // this.renderer.invokeElementMethod(this.input.nativeElement,'focus', null );
-        this.input.forEach((inputDir:InputDir,i)=>{
+        this.renderer.invokeElementMethod(this.input.el.nativeElement,'focus', null );
+        this.inputs.forEach((inputDir:InputDir,i)=>{
             inputDir.el.nativeElement.value = i;
         })
         console.log('Focus on the Input');

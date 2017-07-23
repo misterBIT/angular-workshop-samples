@@ -1,5 +1,6 @@
-import './day2/000-Tries/main';
-// import "./day2/010-counterInputOutput/main";
+// import './day2/000-Tries/main';
+
+//import "./day2/010-counterInputOutput/main";
 // import "./day2/012-DisplayAndEvents/main";
 // import "./day2/020-BuiltinDirectives/main";
 // import "./day2/025-Pipes/main";
@@ -9,24 +10,31 @@ import './day2/000-Tries/main';
 /**********
  Day3
  *********/
-// import "./day3/070-DI-Cars/main";
-// import "./day3/lifecycle/main";
+// import "./day3/081-InjectingPipe/main";
+
 // import "./day3/010-CustomDirectives/main";
+// import "./day3/050-Collapse-ContentProjection/main";
 // import "./day3/015-refToViewChildren/main";
 // import "./day3/016-refToContentChildren/main";
-//  import "./day3/050-Collapse-ContentProjection/main";
+ 
 // import "./day3/055-Tabs-ContentProjection/main";
 // import "./day3/056-Tabs-ContentProjection2/main";
 // import "./day3/056-Tabs-ContentProjection3-addTab/main";
+// import "./day3/070-DI-Cars/main";
+
 // import "./day3/080-ngForTrackBy/main";
 // import "./day3/modal-component/main";
 // import "./day3/090-ObservableDataServices/main";
-//
+
+/////////// EXTRAS
+// import "./day3/lifecycle/main";
+
+
 /**********
  Day4
  *********/
 // import "./day4/040-MonsterForm/main";
-// import "./day4/forms-live-coding-template-driven/main.ts";
+import "./day4/forms-live-coding-template-driven/main.ts";
 // import './day4/forms-live-coding-model-driven/main.ts';
 // import "./day4/forms-live-coding/main.ts";
 // import "./day4/041-ProductForms/main";
